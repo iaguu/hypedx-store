@@ -1,0 +1,24 @@
+[14-Jun-2021 20:57:25 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 20:57:25 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 20:57:25 America/Fortaleza] PHP Fatal error:  require(): Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 20:59:14 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 20:59:14 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 20:59:14 America/Fortaleza] PHP Fatal error:  require(): Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 20:59:15 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 20:59:15 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 20:59:15 America/Fortaleza] PHP Fatal error:  require(): Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:00:03 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:00:03 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:00:03 America/Fortaleza] PHP Fatal error:  require(): Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:01:21 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:01:21 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:01:21 America/Fortaleza] PHP Fatal error:  require(): Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:02:31 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:02:31 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:02:31 America/Fortaleza] PHP Fatal error:  require(): Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:02:32 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:02:32 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:02:32 America/Fortaleza] PHP Fatal error:  require(): Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:02:33 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:02:33 America/Fortaleza] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
+[14-Jun-2021 21:02:33 America/Fortaleza] PHP Fatal error:  require(): Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php73/root/usr/share/pear') in /home2/hypedx94/public_html/sktpoint/Inicio/index.php on line 3
