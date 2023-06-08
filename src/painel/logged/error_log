@@ -1,0 +1,15 @@
+[06-Jun-2023 19:57:07 America/Fortaleza] PHP Warning:  Undefined variable $mysqli in /home3/hypedx14/public_html/src/painel/logged/actions.php on line 30
+[06-Jun-2023 19:57:07 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home3/hypedx14/public_html/src/painel/logged/actions.php:30
+Stack trace:
+#0 {main}
+  thrown in /home3/hypedx14/public_html/src/painel/logged/actions.php on line 30
+[06-Jun-2023 19:58:08 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "function" in /home3/hypedx14/public_html/src/painel/logged/actions.php on line 3
+[06-Jun-2023 19:58:09 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "function" in /home3/hypedx14/public_html/src/painel/logged/actions.php on line 3
+[06-Jun-2023 19:58:10 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "function" in /home3/hypedx14/public_html/src/painel/logged/actions.php on line 3
+[06-Jun-2023 19:58:11 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "function" in /home3/hypedx14/public_html/src/painel/logged/actions.php on line 3
+[06-Jun-2023 19:58:11 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "function" in /home3/hypedx14/public_html/src/painel/logged/actions.php on line 3
+[06-Jun-2023 19:58:12 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "function" in /home3/hypedx14/public_html/src/painel/logged/actions.php on line 3
+[06-Jun-2023 19:58:25 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "function" in /home3/hypedx14/public_html/src/painel/logged/actions.php on line 3
+[06-Jun-2023 19:58:28 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "function" in /home3/hypedx14/public_html/src/painel/logged/actions.php on line 3
+[06-Jun-2023 20:00:06 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "}" in /home3/hypedx14/public_html/src/painel/logged/actions.php on line 34
+[06-Jun-2023 23:18:51 America/Fortaleza] PHP Parse error:  syntax error, unexpected token ";", expecting ")" in /home3/hypedx14/public_html/src/painel/logged/actions.php on line 30

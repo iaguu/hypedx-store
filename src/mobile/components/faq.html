@@ -1,0 +1,112 @@
+
+  <style>
+    .faq {
+      margin: 15px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+    }
+
+    .faq-dropdown {
+      margin: 10px;
+      cursor: pointer;
+      text-align: left;
+      width: 75%;
+      border: 1px solid #C0C0C0;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .faq-dropdown h3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0;
+      font-size: 22px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .faq-dropdown h3::after {
+      content: "\25BC";
+      font-size: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-dropdown.active h3::after {
+      transform: rotate(180deg);
+    }
+
+    .faq-dropdown p {
+      transition: transform 0.3s ease;
+      margin: 10px 0;
+      font-size: 23px;
+      color: #555;
+      display: none;
+    }
+    .faq-dropdown.active p {
+      display: block;
+    }
+  </style>
+
+  <div class="faq">
+    <h2>Perguntas Frequentes</h2>
+
+    <div class="faq-dropdown">
+      <h3>Quais materiais são utilizados nas semijoias?</h3>
+      <p>
+        As semijoias são joias produzidas com materiais de qualidade, geralmente compostas por uma base metálica, como latão ou cobre, banhada em metais preciosos, como ouro ou prata. Além disso, elas podem ser adornadas com pedras naturais, zircônias, cristais e outros materiais semipreciosos.
+      </p>
+    </div>
+
+    <div class="faq-dropdown">
+      <h3>Como posso cuidar das minhas semijoias para garantir sua durabilidade?</h3>
+      <p>
+        Para garantir a durabilidade das suas semijoias, é importante seguir algumas recomendações de cuidados:
+        <br>
+        - Evite contato com água: Remova suas semijoias ao tomar banho, nadar ou praticar atividades físicas intensas. A exposição prolongada à água pode danificar os materiais e acabamentos.
+        <br>
+        - Evite contato com produtos químicos: Evite o contato direto das semijoias com produtos de limpeza, perfumes, cosméticos, cremes e produtos químicos em geral. Esses produtos podem causar desgaste e danos aos materiais.
+        <br>
+        - Armazenamento adequado: Guarde suas semijoias em um local limpo, seco e separado de outras joias para evitar atritos e arranhões. Utilize saquinhos de tecido macio, caixas ou organizadores específicos para joias.
+        <br>
+        - Limpeza regular: Faça a limpeza das semijoias regularmente utilizando um pano macio e seco para remover qualquer sujeira ou resíduo. Evite o uso de produtos de limpeza agressivos.
+      </p>
+    </div>
+
+    <div class="faq-dropdown">
+      <h3>Vocês oferecem garantia nos produtos?</h3>
+      <p>
+        Quanto à garantia dos produtos, oferecemos garantia contra defeitos de fabricação e extravios no frete. Caso você identifique algum defeito de fabricação em sua semijoia, entre em contato conosco para que possamos providenciar a troca ou o conserto. No caso de extravios durante o processo de entrega, nós nos responsabilizamos pelo reenvio do produto ou pelo reembolso do valor pago.
+      </p>
+    </div>
+
+    <div class="faq-dropdown">
+      <h3>Quanto tempo leva para que meu pedido seja entregue?</h3>
+      <p>
+        O prazo de entrega do seu pedido varia de acordo com a região. Em geral, entregamos em até no máximo 15 dias úteis, a partir do prazo de postagem. No entanto, é importante destacar que o tempo médio de entrega costuma ser menor, variando de 3 a 7 dias, dependendo da localidade. Esse prazo pode ser afetado por fatores externos, como feriados, greves ou condições climáticas adversas.
+      </p>
+    </div>
+
+    <div class="faq-dropdown">
+      <h3>Vocês aceitam devoluções ou trocas?</h3>
+      <p>
+        Sim, aceitamos devoluções e trocas de produtos em até 7 dias corridos, de acordo com a lei brasileira de compras pela internet. Se você não estiver satisfeito com sua semijoia, entre em contato conosco dentro desse prazo para que possamos fornecer instruções sobre o processo de devolução ou troca. É importante ressaltar que o produto deve estar em perfeito estado, sem sinais de uso, e dentro das condições estabelecidas pela empresa.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Adicionar evento de clique para exibir/ocultar as respostas
+    var faqDropdowns = document.querySelectorAll('.faq-dropdown');
+    faqDropdowns.forEach(function(dropdown) {
+      dropdown.addEventListener('click', function() {
+        this.classList.toggle('active');
+      });
+    });
+  </script>

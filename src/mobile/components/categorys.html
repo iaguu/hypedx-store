@@ -1,0 +1,105 @@
+<style>
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 30px;
+    }
+    .grid-item{
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        border: 1px solid gainsboro;
+        border-radius: 20px;
+        animation-duration: 1s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .i-00{
+        background-image: url('../assets/images/products/produto1.jpg');
+        background-size: cover;
+    }
+    .i-01{
+        background-image: url('../assets/images/products/produto2.jpg');
+        background-size: cover;
+    }
+    .i-02{
+        background-image: url('../assets/images/products/produto3.jpg');
+        background-size: cover;
+    }
+    .i-03{
+        background-image: url('../assets/images/products/produto4.jpg');
+        background-size: cover;
+    }
+    .i-04{
+        background-image: url('../assets/images/products/produto5.jpg');
+        background-size: cover;
+    }
+    .i-05{
+        background-image: url('../assets/images/products/produto1.jpg');
+        background-size: cover;
+    }
+    .i-06{
+        background-image: url('../assets/images/products/produto1.jpg');
+        background-size: cover;
+    }
+    .i-07{
+        background-image: url('../assets/images/products/produto1.jpg');
+        background-size: cover;
+    }
+    .i-08{
+        background-image: url('../assets/images/products/produto1.jpg');
+        background-size: cover;
+    }
+    .grid-item:hover{
+        transform: scale(1.08);
+    }
+    .grid-item h1{
+        text-align: center;
+        color: white;
+    }
+</style>
+
+<div class="container">
+    <h2>Categorias:</h2>
+<div class="grid">
+    <div class="grid-item i-00">
+        <h1>Abaixo de R$100</h1>
+    </div>
+    <div class="grid-item i-01">
+        <h1>Colares</h1>
+    </div>
+    <div class="grid-item i-02">
+        <h1>Pulseiras</h1>
+    </div>
+    <div class="grid-item i-03">
+        <h1>Relógios</h1>
+    </div>
+    <div class="grid-item i-04">
+        <h1>Kits</h1>
+    </div>
+    <div class="grid-item i-05">
+        <h1>Brincos</h1>
+    </div>
+    <div class="grid-item i-06">
+        <h1>Promoções</h1>
+    </div>
+    <div class="grid-item i-07">
+        <h1>Pingentes</h1>
+    </div>
+    <div class="grid-item i-08">
+        <h1>Anéis</h1>
+    </div>
+</div>
+</div>

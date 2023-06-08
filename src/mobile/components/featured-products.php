@@ -9,24 +9,22 @@
     margin-top: 50px;
   }
   .products h1{
-    font-size: 26px;
+    font-size: 32px;
     padding: 20px;
   }
   .product-carousel {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .product-box {
     background-color: white;
     border: 1px solid whitesmoke;
     border-radius: 15px;
-    width: 250px;
-    height: 230px;
+    width: 550px;
+    height: 575px;
     margin: 10px;
     padding: 20px;
     border-radius: 10px;
@@ -37,20 +35,22 @@
     transition: transform 0.3s ease;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     cursor:pointer;
+    margin-top: 75px;
   }
   .product-infos{
     height:fit-content;
     width: fit-content;
-    margin-bottom: 50px;
-    margin-top:-35px;
+    margin-bottom: 100px;
+    margin-top:-95px;
+    font-size: 24px;
   }
   .product-infos p{
     overflow: hidden;
    text-overflow: ellipsis;
    display: -webkit-box;
-   line-height: 16px;    
-   max-height: 50px;     
-   -webkit-line-clamp: 3; 
+   line-height: 20px;    
+   max-height: 95px;     
+   -webkit-line-clamp: 4; 
    -webkit-box-orient: vertical;
   }
   .product-box:hover {
@@ -62,11 +62,11 @@
     max-height: 70%;
     padding: 10px;
     border-radius: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 130px;
   }
 
   .product-box h2 {
-    font-size: 14px;
+    font-size: 26px;
     margin-bottom: 5px;
   }
 
@@ -78,7 +78,7 @@
     justify-content: center;
     align-self: center;
     text-align: center;
-    padding: 5px;
+    padding: 95px;
   }
 
   .button-see-more {
@@ -86,9 +86,9 @@
     background-color: white;
     border: 2px solid #333;
     color: #000000;
-    padding: 18px;
+    padding: 50px;
     border-radius: 18px;
-    font-size: 18px;
+    font-size: 46px;
     font-weight: bold;
     transition: background-color 0.3s ease;
     margin: 5px;
@@ -114,13 +114,10 @@
     $row = mysqli_num_rows($run);    
 
     while ($produto = $run->fetch_array()):
-    
-    $imgs = explode(",", $produto['imagem']);
-
   ?>
 <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ?>">
     <div class="product-box">
-      <img src="../assets/images/products/<?php echo $imgs[0]; ?>" alt="Produto 1">
+      <img src="../assets/images/products/<?php echo $produto['imagem']; ?>" alt="Produto 1">
       <div class="product-infos">
         <h2><?php echo $produto['nome'] ?></h2>
         <p><?php echo $produto['descricao_principal'] ?></p>

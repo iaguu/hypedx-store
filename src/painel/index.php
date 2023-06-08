@@ -1,8 +1,5 @@
 <?php
-if($_GET['username'] !== null){
-    $user = $_GET['username'];
-    $pas = $_GET['user_password'];
-}
+
 ?>
 <html lang="en">
 <head>
@@ -92,7 +89,8 @@ button:hover {
     </style>
 </head>
 <body>
-    <form class="form card">
+  
+    <form autocomplete="off" class="form card" action="https://hypedx.com.br/auth" method="POST">
         <div class="card_header">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
             <path fill="none" d="M0 0h24v24H0z"></path>

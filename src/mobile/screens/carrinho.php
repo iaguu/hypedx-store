@@ -1,5 +1,6 @@
 <?php
-    @session_start();
+	include_once('config.php');
+	@session_start();
 
     $a = $_SESSION['cartProds'];
 	$b = $_SESSION['cartQnt'];
@@ -9,7 +10,16 @@
 	$b = substr($b,0,-1);
 	$c = substr($c,0,-1);
 
+    $email = $_SESSION['user'];
+
+	$q = "SELECT * FROM usuarios WHERE email = '$email'";
+	$rn = $mysqli->query($q);
+	$user = $rn->fetch_array();
+
+	$nome = $user['nome'];
+
 	$total = 0;
+
 ?>
 <html lang="en">
 <head>
@@ -438,11 +448,10 @@
     </style>
 
 </head>
-
 <body>
     <header>
         <div class="menu">
-        <!-- <a href="https://hypedx.com.br/Inicio"><img width="64" src="../Inicio/images/HypedX.jpg" alt=""></a> -->
+        <a href="https://hypedx.com.br/Inicio"><img width="64" src="../Inicio/images/HypedX.jpg" alt=""></a>
             <a href="https://hypedx.com.br/Inicio"><h2>HypedX</h2></a>
         </div>
     </header>
@@ -465,7 +474,7 @@
 
             <script>
                 function remove(id) { 
-                    window.location.href = 'https://hypedx.com.br/src/desktop/components/remove-from-cart.php?id=' + id;
+                    window.location.href = 'remove.php?id=' + id;
                  }
             </script>
 
@@ -484,32 +493,40 @@
                     <?php
                     if(isset($_SESSION['cartProds']))
                     {
-                        $a = explode(",", $a);
-    
-                        $b = explode(",", $b);
-    
-                        $c = explode(",", $c);
-    
-                        for ($i = 0; $i < sizeof($a); $i++){
-    
-    
-                            $q = "SELECT * FROM produtos WHERE id = ";
-    
-                            $q .= $a[$i];
-    
-                            $rn = $mysqli->query($q);
-                            
-                            $prod = $rn->fetch_array();
-                            
-                            $total = $total + $prod['preco'];
-    
-                            $imgs = explode(",", $prod['imagem']);
-                            
-
                     ?>
+                    <div class="product-label" style="background-color: #eee !important;">
+                        <div style="width: 50px;"></div>
+                        <h3 style="width: 124px !important;">PRODUTO</h3>
+                        <h3>PREÇO</h3>
+                        <h3 class="mobile-hide">QUANTIDADE</h3>
+                        <h3 class="mobile-hide">SUBTOTAL</h3>
+                        <h2 style="width: 25px !important;"></h2>
+                        <h3 class="mobile-hide" style="width: 5px !important;"></h3>
+                    </div>
+                    <?php
+                    $a = explode(",", $a);
 
+                    $b = explode(",", $b);
+
+                    $c = explode(",", $c);
+
+                    for ($i = 0; $i < sizeof($a); $i++){
+
+
+                        $q = "SELECT * FROM produtos WHERE id = ";
+
+                        $q .= $a[$i];
+
+                        $rn = $mysqli->query($q);
+                        
+                        $prod = $rn->fetch_array();
+                        
+                        $total = $total + $prod['preco'];
+
+                        $imgs = explode(",", $prod['img']);
+                    ?>
                     <div class="product-label">
-                        <img width="72" src="assets/images/products/<?php echo $imgs[0]; ?>" alt=""> 
+                        <img width="72" src="../Catalogo/images/<?php echo $imgs[0]; ?>" alt=""> 
                         <h2 style="width: 120px !important; margin-left: -25px;"><?php echo $prod['nome']; ?></h2>
                         <h2>R$<?php echo $prod['preco']; ?>,00</h2>
                         <h2 class="mobile-hide">1</h2>
@@ -527,7 +544,7 @@
                     ?>
                 </div>
                 <div class="main-footer">
-                    <a style="text-decoration: none;" href="../categorias"><div style="background-color: white !important; color:#7700ff !important;" class="shop-btn"><i class="fa-solid fa-cart-shopping"><p> </p></i> <h2> Continuar Comprando</h2></div></a>
+                    <a style="text-decoration: none;" href="../Catalogo"><div style="background-color: white !important; color:#7700ff !important;" class="shop-btn"><i class="fa-solid fa-cart-shopping"><p> </p></i> <h2> Continuar Comprando</h2></div></a>
                     <?php
                     if(isset($_SESSION['cartProds']))
                     {
@@ -556,125 +573,90 @@
                 </div>
                 <br>
                 <div class="main-body">
-
                     <div class="checkout-form">
-
                         <form id="formCad">
-
                             <div class="separator">
-
-
 
                                 <h2>Informações de Cobrança:</h2>
 
-
-
                                 <label for="name">Nome: <span>*</span> </label>
-
-                                <input required placeholder="Seu nome" type="text" name="" id="nome" >
-
+                                <input required placeholder="Seu nome" type="text" name="" id="nome" style="width: 100px !important;">
                                 <br>
-
                                 <label for="midname">Sobrenome: <span>*</span> </label>
-
-                                <input required placeholder="Seu sobrenome" type="text" name="" id="midname" >
-
+                                <input required placeholder="Seu sobrenome" type="text" name="" id="midname" style="width: 150px !important;">
                                 <br>
-
                                 <br>
-
                                 <label for="email">Email: <span>*</span> </label>
-
-                                <input required placeholder="email@hotmail.com" type="email" name="" id="email" >
-
+                                <input required placeholder="email@hotmail.com" type="email" name="" id="email" style="width: 250px !important;">
                                 <br>
-
                                 <label for="tel">Celular: <span>*</span> </label>
-
-                                <input onkeydown="$(this).mask('(00) 00000-0000');" required placeholder="(11) 99999-9999" type="phone" name="" id="tel" >
-
+                                <input onkeydown="$(this).mask('(00) 00000-0000');" required placeholder="(11) 99999-9999" type="phone" name="" id="tel" style="width: 200px !important;">
                                 
-
                             </div>
-
                             <br>
-
                             <br>
-
                             <div class="separator">
-
                                 <h2>Informações para o Envio:</h2>
 
-
-
                                 <label for="end">Endereço: <span>*</span> </label>
-
                                 <input required placeholder="Av. Brasil" type="text" name="" id="end">
-
                                 <br>
-
                                 <label for="n">Nº: <span>*</span> </label>
-
-                                <input required placeholder="3113" type="text" name="" id="n" >
-
+                                <input required placeholder="3113" type="text" name="" id="n" style="width: 75px !important;">
                                 <br>
-
                                 <label for="cep">CEP: <span>*</span> </label>
-
-                                <input onkeydown="$(this).mask('00000-000');" required placeholder="02431020" type="postal" name="" id="cep" >
-
+                                <input onkeydown="$(this).mask('00000-000');" required placeholder="02431020" type="postal" name="" id="cep" style="width: 150px !important;">
                                 <br>
-
                                 <label for="compl">Complemento: </label>
+                                <input placeholder="Apartamento 212 bloco A" type="text" name="" id="compl" style="width: 200px !important;">
+                            </div>
+                            <br>
+                            <br>
+                            <div class="separator">
 
-                                <input placeholder="Apartamento 212 bloco A" type="text" name="" id="compl">
+                                <h2>Formas de Pagamento:</h2>
+                                <div class="payment-forms">
+                                    <br>
+                                    <br>
+                                    <img class="hover-pay" width="100" id="mercc" onclick="choosePlat('merc'); $(this).toggleClass('active-pay');" src="images/mercadopago.jpg" alt="">
+                                    <img class="hover-pay" width="100" id="pagg" onclick="alert('PagSeguro está em manutenção no momento, por favor escolha outra plataforma ou entre em contato conosco.')" src="images/pagseguro.jpg" alt="">
+                                    <!-- <img class="hover-pay" width="100" id="pagg" onclick="choosePlat('pag'); $(this).toggleClass('active-pay'); " src="images/pagseguro.jpg" alt=""> -->
+                                    <br>
+                                </div>
 
                             </div>
-
                             <br>
+                            <div class="separator">
 
-                            <div>
-
-
-
-                                        <div class="main-footer-checkout">
-
-                                            <h2 style="color:#1B1B1B; font-size: 16px; text-align: center; padding: 15px;">Total a ser pago: R$220,00</h2>
-
-                                            <div id="paybtn" onclick="$('#formCad').submit();" class="pay-btn"><i class="fa-solid fa-lock"></i><h4 style="color:white !important;">Pagar</h4></div>
-
-                                            <!-- <div id="paybtn" onclick="$('#checkout').hide();$('#loader').show();" class="pay-btn standby"><i class="fa-solid fa-lock"></i><h4 style="color:white !important;">Pagar</h4></div> -->
-
-                                            <br>
-
-                                        </div>
-
-                                        </div>
-
-                                      </div>
-
-
+                                <div class="infos">
+                                    <h3>Produtos: R$<?php echo $total; ?>,00</h3>
+                                    <h3>Descontos: R$0,00</h3>
+                                    <h3>Frete: R$0,00</h3>
+                                    <h2>Subtotal: R$<?php echo $total; ?>,00</h2>
+                                    <hr />
+                                    <br>
+                                    <br>
+                                    <hr />
+                                    <h2>Total: R$<?php echo $total; ?>,00</h2>
+                                    <hr />
+                                    <br>
+                                    <h3 style="display: none;" id="mercform">Forma de Pagamento: MercadoPago</h3>
+                                    <h3 style="display: none;" id="pagform">Forma de Pagamento: PagSeguro</h3>
+                                    <br>
+                                    <div class="main-footer-checkout">
+                                        
+                                        <div id="paybtn" onclick="$('#formCad').submit();" class="pay-btn standby"><i class="fa-solid fa-lock"></i><h4 style="color:white !important;">Pagar</h4></div>
+                                        <!-- <div id="paybtn" onclick="$('#checkout').hide();$('#loader').show();" class="pay-btn standby"><i class="fa-solid fa-lock"></i><h4 style="color:white !important;">Pagar</h4></div> -->
+                                        <br>
+                                        <p class="obs mobile-hide">(Você será redirecionado para a plataforma escolhida p/ realizar o pagamento com segurança e privacidade).</p>
                                     </div>
-
-                                    
-
-                    
+                                </div>
 
                             </div>
-
-                            <br>
-
-
-
-
-
-                            </div>
-
-
 
                         </form>
-
                     </div>
+                </div>
 
             </div>
             
@@ -897,6 +879,7 @@
         }
     </style>
 
+        <input type="hidden" id="platform" value="">
   
   <script>
 
@@ -916,7 +899,7 @@
                 var num = $('#n').val();
                 var pw = "12345678";
 
-            if(nome.length > 3 && email.length > 10 && tel.length > 8 && cep.length > 6 && num.length > 0){
+            if(nome.length > 3 && email.length > 10 && tel.length > 8 && cep.length > 6 && num.length > 0 && window.enabled == "true"){
                 
                 $("#checkout").hide();
                 $("#loader").show();
@@ -945,6 +928,9 @@
                         if(platform == 'mercadopago'){
                             window.location.href = 'checkout/mercadopago/?total=' + total + '&payment=' + pay;
                         }
+                        if(platform == "pagseguro"){
+                            window.location.href = 'checkout/pagseguro/?total=' + total + '&payment=' + pay + '&descri=' + descri;
+                        }
     
                 }
     
@@ -958,7 +944,29 @@
     });
     
     </script>
+        <script>
+            function choosePlat(a) {
 
+                $('#mercform').hide();
+                $('#pagform').hide();
+
+                if(a == "pag"){
+                    $("#platform").val("pagseguro");
+                    $('#pagform').show(500);
+                }
+                if(a == "merc"){
+                    $("#platform").val("mercadopago");
+                    $('#mercform').show(500);
+                }
+
+                $('#mercc').removeClass('active-pay');
+                $('#pagg').removeClass('active-pay');
+
+                $('#paybtn').removeClass('standby');
+
+                window.enabled = "true";
+            }
+        </script>
         <a class="mobile-hide" href="https://wa.me/551151998446?text=Poderiam%20me%20ajudar?" style="position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888;
         z-index:1000;" target="_blank">
             <i style="margin-top:16px" class="fa fa-whatsapp"></i>

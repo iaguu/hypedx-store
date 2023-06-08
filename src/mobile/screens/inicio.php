@@ -10,7 +10,6 @@
   <!-- Importar a biblioteca Owl Carousel -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    
 <!-- Primary Meta Tags -->
 <title>HypedX — Quanto vale seu estilo?</title>
 <meta name="title" content="HypedX — Quanto vale seu estilo?">
@@ -29,7 +28,6 @@
 <meta property="twitter:title" content="HypedX — Quanto vale seu estilo?">
 <meta property="twitter:description" content="A HYPEDX é uma empresa dedicada à criação e comercialização de semijoias de alta qualidade. Nossa missão é oferecer peças exclusivas e elegantes, que realçam a beleza e a sofisticação de quem as usa.">
 <meta property="twitter:image" content="https://hypedx.com.br/assets/images/banners/frete.png">
-
   <style>
     /* CSS */
     body {
@@ -65,7 +63,7 @@
   <!-- Menu de Navegação -->
   <nav>
     <?php
-    include('src/desktop/components/navigation.html')
+    include('src/mobile/components/navigation.html')
     ?>
   </nav>
 
@@ -75,7 +73,7 @@
   <!-- Banner Principal -->
 
     <?php
-    include('src/desktop/components/banner.html')
+    include('src/mobile/components/banner.html')
     ?>
     <br>
     <br>
@@ -85,13 +83,13 @@
     <!-- Banner Tarja -->
   
     <?php
-      include('src/desktop/components/tarja.html')
+      include('src/mobile/components/tarja.html')
       ?>
     <br>
   <!-- Seção de Produtos Mais Vendidos -->
 
     <?php
-    include('src/desktop/components/featured-products.php')
+    include('src/mobile/components/featured-products.php')
     ?>
 
 
@@ -112,7 +110,7 @@
   <!-- Seção de Perguntas Frequentes -->
 
     <?php
-    include('src/desktop/components/faq.html')
+    include('src/mobile/components/faq.html')
     ?>
 
 
@@ -123,7 +121,7 @@
   <!-- Seção de Prova Social -->
   <div class="social-proof">
     <?php
-    include('src/desktop/components/testimonials.html')
+    include('src/mobile/components/testimonials.html')
     ?>
   </div>
 
@@ -133,7 +131,7 @@
   <!-- Seção de Newsletter -->
 
   <?php
-  include('src/desktop/components/news.php')
+  include('src/mobile/components/news.php')
   ?>
 
   <!-- Seção de Contato e Resolução de Problemas -->
@@ -143,7 +141,7 @@
 
   <!-- Seção do Rodapé -->
     <?php 
-        include("src/desktop/components/footer.html")
+        include("src/mobile/components/footer.html")
     ?>
 </body>
 <script>

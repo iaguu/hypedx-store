@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <?php
-    require('../config.php');
-    $query = "SELECT * FROM produtos WHERE label = 'SKTP'";
-    $run = $mysqli->query($query);
+    // $query = "SELECT * FROM produtos WHERE label = 'SKTP'";
+    // $run = $mysqli->query($query);
 ?>
 <html lang="pt-br">
   <head>
@@ -34,23 +33,6 @@
     <link rel="stylesheet" href="../css/style.css">
 	<link rel="shortcut icon" href="../images/logo.jpg">
 
-	<!-- Facebook Pixel Code -->
-	<script>
-	!function(f,b,e,v,n,t,s)
-	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-	n.queue=[];t=b.createElement(e);t.async=!0;
-	t.src=v;s=b.getElementsByTagName(e)[0];
-	s.parentNode.insertBefore(t,s)}(window, document,'script',
-	'https://connect.facebook.net/en_US/fbevents.js%27);
-	fbq('init', '350203053194266');
-	fbq('track', 'PageView');
-	</script>
-	<noscript><img height="1" width="1" style="display:none"
-	src="https://www.facebook.com/tr?id=350203053194266&ev=PageView&noscript=1"
-	/></noscript>
-	<!-- End Facebook Pixel Code -->
 
 	<!-- Primary Meta Tags -->
             <meta name="title" content="SktPoint | O Nipe de Qualidade?">
@@ -88,7 +70,6 @@
 			</nav>
 
 			<div class="colorlib-footer">
-				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 			  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Hypedx | All rights reserved | Developed by Guilherme Castello</a>
 				<ul>
 					<li><a href="#"><i class="icon-instagram"></i></a></li>
@@ -102,8 +83,8 @@
 					<div class="col-md-8 text text-center">
 						<div class="img mb-4" style="background-image: url(../images/logo.jpg);"></div>
 						<div class="desc">
-							<h1 class="mb-4">SktPoint | O Nipe De Qualidade</h1>
-							<p class="mb-4">Adquira agora o seu drip!</p>
+							<h1 class="mb-4">SktPoint</h1>
+							<p class="mb-4">Adquira agora as melhores!</p>
 						</div>
 					</div>
 				</div>

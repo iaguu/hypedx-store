@@ -1,25 +1,11 @@
-<?php
-
-$route = strtolower($_GET['param']);
-
-$route = explode('/', $route);
-
-$url = $route[1];
-
-$sql = "SELECT * FROM produtos WHERE href = '$url'";
-$exe = $mysqli->query($sql);
-$prod = $exe->fetch_array();
-
-$imgs = explode(",", $prod['imagem']);
-?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title><?php echo $prod['nome']; ?></title>
+  <title>Visualização de Produto</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<style>
+  <style>
   body {
     background-color: #f0f0f0;
     margin: 0 auto;
@@ -227,7 +213,20 @@ $imgs = explode(",", $prod['imagem']);
 
 </head>
 <body>
+<?php
 
+$route = strtolower($_GET['param']);
+
+$route = explode('/', $route);
+
+$url = $route[1];
+
+$sql = "SELECT * FROM produtos WHERE href = '$url'";
+$exe = $mysqli->query($sql);
+$prod = $exe->fetch_array();
+
+
+?>
 <?php
 include('src/desktop/components/navigation.html')
 ?>
@@ -235,11 +234,11 @@ include('src/desktop/components/navigation.html')
     <div class="product-view">
         <div class="product-images">
             <div class="principal">
-                <img src="../assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 1">
+                <img src="../assets/images/products/produto1.jpg" alt="Product Image 1">
             </div>
           <div class="secondary">
-            <img src="../assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 2">
-            <img src="../assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 3">
+            <img src="../assets/images/products/produto1.jpg" alt="Product Image 2">
+            <img src="../assets/images/products/produto1.jpg" alt="Product Image 3">
           </div>
 
         </div>
@@ -254,8 +253,9 @@ include('src/desktop/components/navigation.html')
           <div class="product-variants">
             <label class="variant-label">Variação:</label>
             <div class="variant-options">
-              <div class="variant-option">Prata</div>
-              <div class="variant-option">Ouro</div>
+              <div class="variant-option">Opção 1</div>
+              <div class="variant-option">Opção 2</div>
+              <div class="variant-option">Opção 3</div>
             </div>
           </div>
 
@@ -264,8 +264,8 @@ include('src/desktop/components/navigation.html')
           <br>
 
           <div class="buttons">
-            <a href="https://hypedx.com.br/src/desktop/components/add-to-cart.php?id=<?php echo $prod['id']?>" class="cta-button">Comprar Agora</a>
-            <a href="https://hypedx.com.br/src/desktop/components/add-to-cart.php?id=<?php echo $prod['id']?>" style="text-decoration:none; color:inherit;"><button class="add-to-cart-button">Adicionar ao Carrinho</button></a>
+            <a href="#" class="cta-button">Comprar Agora</a>
+            <button class="add-to-cart-button">Adicionar ao Carrinho</button>
           </div>
 
           <br>
