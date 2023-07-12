@@ -27,7 +27,7 @@
     background-color: #ffffff;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    width: 50%;
+    width: 95%;
     text-align: center;
   }
 
@@ -49,26 +49,27 @@
 
 
   .product-info {
-    width: 70%;
+    width: 75%;
   }
 
   .product-title {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     margin-bottom: 15px;
     color: #333333;
   }
 
   .product-description {
+    font-size:28px;
     margin-bottom: 15px;
     color: #666666;
   }
 
   .product-price {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #ff6600;
+    color: black;
   }
 
   .product-variants {
@@ -80,7 +81,7 @@
   }
 
   .variant-label {
-    font-size: 16px;
+    font-size: 22px;
     font-weight: bold;
     color: #333333;
   }
@@ -92,8 +93,8 @@
 
   .variant-option {
     display: inline-block;
-    padding: 5px 10px;
-    font-size: 14px;
+    padding: 8px 15px;
+    font-size: 18px;
     color: #ffffff;
     background-color: #333333;
     border-radius: 20px;
@@ -110,37 +111,38 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 100%;
   }
 
   .cta-button {
     display: inline-block;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #ffffff;
-    background-color: #ff6600;
-    border-radius: 30px;
-    transition: background-color 0.3s ease;
-    animation: pulse 1.5s infinite;
-  }
-
-  .cta-button:hover {
-    background-color: #ff4500;
-    animation: none;
-  }
-
-  .add-to-cart-button {
-    display: inline-block;
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 18px 28px;
+    font-size: 32px;
     font-weight: bold;
     text-decoration: none;
     color: #ffffff;
     background-color: #333333;
     border-radius: 30px;
     transition: background-color 0.3s ease;
-    margin-top: 15px;
+    animation: pulse 1.5s infinite;
+  }
+
+  .cta-button:hover {
+    background-color: black;
+    animation: none;
+  }
+
+  .add-to-cart-button {
+    display: inline-block;
+    padding: 16px 24px;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    background-color: #ffffff;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    margin-top: 50px;
     cursor: pointer;
   }
 
@@ -151,7 +153,7 @@
   .related-products {
     margin-top: 50px;
     border-top: 1px solid gray;
-    width: 60%;
+    width: 95%;
   }
 
   .related-products h3 {
@@ -225,20 +227,21 @@ $sql = "SELECT * FROM produtos WHERE href = '$url'";
 $exe = $mysqli->query($sql);
 $prod = $exe->fetch_array();
 
+$imgs = explode(",", $prod['imagem']);
 
 ?>
 <?php
-include('src/desktop/components/navigation.html')
+include('src/mobile/components/navigation.html')
 ?>
 <div class="container">
     <div class="product-view">
         <div class="product-images">
-            <div class="principal">
-                <img src="../assets/images/products/produto1.jpg" alt="Product Image 1">
+        <div class="principal">
+                <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 1">
             </div>
           <div class="secondary">
-            <img src="../assets/images/products/produto1.jpg" alt="Product Image 2">
-            <img src="../assets/images/products/produto1.jpg" alt="Product Image 3">
+            <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 2">
+            <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 3">
           </div>
 
         </div>
@@ -253,9 +256,8 @@ include('src/desktop/components/navigation.html')
           <div class="product-variants">
             <label class="variant-label">Variação:</label>
             <div class="variant-options">
-              <div class="variant-option">Opção 1</div>
-              <div class="variant-option">Opção 2</div>
-              <div class="variant-option">Opção 3</div>
+              <div class="variant-option">Prata</div>
+              <div class="variant-option">Ouro</div>
             </div>
           </div>
 
@@ -264,9 +266,10 @@ include('src/desktop/components/navigation.html')
           <br>
 
           <div class="buttons">
-            <a href="#" class="cta-button">Comprar Agora</a>
-            <button class="add-to-cart-button">Adicionar ao Carrinho</button>
+            <a href="https://hypedx.com.br/src/mobile/components/add-to-cart.php?id=<?php echo $prod['id']?>" class="cta-button">Comprar Agora</a>
+            <a href="https://hypedx.com.br/src/mobile/components/add-to-cart.php?id=<?php echo $prod['id']?>" style="text-decoration:none; color:inherit;"><button class="add-to-cart-button">Adicionar ao Carrinho</button></a>
           </div>
+
 
           <br>
 
@@ -280,46 +283,47 @@ include('src/desktop/components/navigation.html')
             <br>
             <br>
 
-            <div class="product-item">
-              <img src="../assets/images/products/produto2.jpg" alt="Related Product 1">
-              <div class="related-infos">
+            <?php      
+              $query = "SELECT * FROM produtos WHERE categoria = '$categoria' AND id <> '$id' ORDER BY id DESC";
+              $run = $mysqli->query($query);
+              $row = mysqli_num_rows($run);    
+          
+              while ($produto = $run->fetch_array()):
+              
+              $imgs = explode(",", $produto['imagem']);
+        
+            ?>
 
-              <p class="related-product-title">Produto Relacionado 1</p>
-              <p class="related-product-price">R$30,00</p>
-            </div>
-        </div>
-            <div class="product-item">
-              <img src="../assets/images/products/produto3.jpg" alt="Related Product 2">
-              <div class="related-infos">
-              <p class="related-product-title">Produto Relacionado 2</p>
-              <p class="related-product-price">R$30,00</p>
-            </div>
-            </div>
-            <div class="product-item">
-              <img src="../assets/images/products/produto4.jpg" alt="Related Product 3">
-              <div class="related-infos">
+              <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ?>">
+                <div class="product-item">
+                  <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0] ?>" alt="Related Product 1">
+                    <div class="related-infos">
 
-              <p class="related-product-title">Produto Relacionado 3</p>
-              <p class="related-product-price">R$30,00</p>
-            </div>
-        </div>
+                    <p class="related-product-title"><?php echo $produto['nome'] ?></p>
+                    <p class="related-product-price">R$<?php echo $produto['preco'] ?>,00</p>
+                  </div>
+                </div>
+              </a>
+
+            <?php endwhile ?> 
+
           </div>
       </div>
 </div>
 <div class="container">
 <?php
-include('src/desktop/components/tarja.html')
+include('src/mobile/components/tarja.html')
 ?>
 <br>
 <br>
 <?php
-include('src/desktop/components/testimonials.html')
+include('src/mobile/components/testimonials.html')
 ?>
 </div>
 <br>
 <br>
 <?php
-include('src/desktop/components/footer.html')
+include('src/mobile/components/footer.html')
 ?>
 </body>
 </html>

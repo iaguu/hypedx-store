@@ -19,20 +19,20 @@
   background: linear-gradient(to right, #3f4c6b, #606c88);
   padding: 30px;
   border-radius: 10px;
-  max-width: 550px;
+  max-width: 90%;
 }
 
 .title {
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 3rem;
+  line-height: 2.5rem;
   font-weight: 700;
   letter-spacing: -0.025em;
   color: #fff;
 }
 
 .description {
-  line-height: 1.5rem;
-  font-size: 1rem;
+  line-height: 1.8rem;
+  font-size: 2rem;
   margin-top: 1rem;
   color: rgb(209 213 219);
 }
@@ -46,15 +46,15 @@
 
 .form div input {
   outline: none;
-  line-height: 1.5rem;
-  font-size: 0.875rem;
+  line-height: 1.7rem;
+  font-size: 1rem;
   color: rgb(255 255 255 );
-  padding: 0.5rem 0.875rem;
+  padding: 0.8rem 1rem;
   background-color: rgb(255 255 255 / 0.05);
   border: 1px solid rgba(253, 253, 253, 0.363);
   border-radius: 0.375rem;
   flex: 1 1 auto;
-  width: 80%;
+  width: 100%;
 }
 
 .form div input::placeholder {
@@ -69,7 +69,7 @@
   cursor: pointer;
   color: #fff;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 1.2rem;
   line-height: 1.25rem;
   padding: 0.625rem 0.875rem;
   background-color: rgb(99 102 241);

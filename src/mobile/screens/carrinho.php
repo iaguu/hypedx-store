@@ -1,6 +1,12 @@
+
 <?php
-	include_once('config.php');
-	@session_start();
+    // SDK do Mercado Pago
+    require '../vendor/autoload.php';
+    // Adicione as credenciais
+    MercadoPago\SDK::setAccessToken('APP_USR-4288469401733406-060811-3dace69572e2eb9ee5392d0c224a8261-1386581309');
+
+
+    @session_start();
 
     $a = $_SESSION['cartProds'];
 	$b = $_SESSION['cartQnt'];
@@ -10,18 +16,9 @@
 	$b = substr($b,0,-1);
 	$c = substr($c,0,-1);
 
-    $email = $_SESSION['user'];
-
-	$q = "SELECT * FROM usuarios WHERE email = '$email'";
-	$rn = $mysqli->query($q);
-	$user = $rn->fetch_array();
-
-	$nome = $user['nome'];
-
 	$total = 0;
-
 ?>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,27 +27,13 @@
 
     <script src="https://kit.fontawesome.com/b37cf30113.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/jquery.mask.js"></script>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script src="https://hypedx.com.br/assets/js/jquery.mask.js"></script>
 
-		<!-- Facebook Pixel Code -->
-			<script>
-			!function(f,b,e,v,n,t,s)
-			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-			n.queue=[];t=b.createElement(e);t.async=!0;
-			t.src=v;s=b.getElementsByTagName(e)[0];
-			s.parentNode.insertBefore(t,s)}(window,document,'script',
-			'https://connect.facebook.net/en_US/fbevents.js');
-			fbq('init', '913689742675022'); 
-			fbq('track', 'PageView');
-			</script>
-			<noscript>
-			<img height="1" width="1" 
-			src="https://www.facebook.com/tr?id=913689742675022&ev=PageView
-			&noscript=1"/>
-			</noscript>
-			<!-- End Facebook Pixel Code -->
+
+    <script>
+        const mp = new MercadoPago('APP_USR-04d5082e-e04f-4f36-b653-399b71195c54');
+    </script>
 
     <style>
         			/* width */
@@ -75,9 +58,12 @@
 			  
         body{
             background-color: whitesmoke;
+            margin:0 auto;
+            padding:0;
+            width:100%;
         }
         a{
-            text-decoration: underline #7700ff;
+            text-decoration: underline black;
         }
         .menu{
             top:0;
@@ -100,7 +86,6 @@
             color: whitesmoke;
             font-size: 38px;
             margin-bottom: 20px;
-            margin-right:75px;
             z-index: 1000;
         }
         .container{
@@ -109,30 +94,33 @@
             align-content: center;
             align-items: center;
             text-align: center;
-            padding: 0px;
+            padding: 10px;
+
         }
         .main{
             position:initial;
-            margin-top:180px;
+            margin-top:150px;
             align-self: center;
             background-color: white;
-            padding: 50px;
+            padding: 20px;
             -webkit-box-shadow: 1px 3px 10px 6px rgba(0,0,0,0.20); 
             box-shadow: 1px 3px 10px 6px rgba(0,0,0,0.20);
-            width: 650px;
         }
         .main-header{
             align-items: center;
             align-self: center;
-            padding: 50px;
+            width: 100%;
+            margin-bottom:50px;
+            margin-left:-5px;
         }
         .main-body{
             align-items: center;
             align-self: center;
-            margin: 20px;
             border: 1px solid #eee;
             box-shadow: 1px 3px 10px 3px rgba(0,0,0,0.14);
-
+            margin-top:50px;
+            margin-bottom:35px;
+            width: 100%;
         }
         .main-footer-checkout{
             display: flex;
@@ -162,7 +150,7 @@
             font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
             font-weight: 600;
             font-size:13px;
-            color: #7700ff;
+            color: black;
             margin-top:35px;
         }
 
@@ -176,13 +164,13 @@
 
         .circle i{margin-top:30px}
 
-        .left{margin-left:30px;}
-        .middle{margin-left:245px;}
-        .right{margin-left:455px;}
+        .left{margin-left:5%}
+        .middle{margin-left:36%;}
+        .right{margin-left:65%;}
 
-        .checked i{color: #7700ff !important;}
+        .checked i{color: black !important;}
 
-        .active{background-color: #7700ff !important;}
+        .active{background-color: black !important;}
         .active i{color: white !important;}
         
         
@@ -196,7 +184,7 @@
             height: 8px;
             padding: 16px;
             border-radius: 100%;
-            background-color: #7700ff;
+            background-color: black;
             color: white;
             cursor: pointer;
             float: right; 
@@ -213,13 +201,13 @@
         .mobile-hide{}
 
         .dashed-line{
-            border:1px dashed #7700ff;
+            border:1px dashed black;
         }
         .shop-btn{
             display: flex;
             justify-content: center;
             text-align: center;
-            background-color: #7700ff;
+            background-color: black;
             color: white;
 
             padding-left: 15px;
@@ -258,7 +246,7 @@
         .loader {
                 border: 6px solid white;
                 border-radius: 50%;
-                border-top: 6px solid #7700ff;
+                border-top: 6px solid black;
                 width: 220px;
                 height: 220px;
                 -webkit-animation: spin 2s linear infinite; /* Safari */
@@ -292,167 +280,208 @@
                 0% { transform: rotate(0deg); }
                 100% { transform: rotate(360deg); }
                 }
-        @media screen and (max-width: 700px){
-        .loader-div{
-            margin-top:200px;
-            display: flex; 
-            flex-direction: column; 
-        }
-        .dashed-line{
-            border:1px dashed #7700ff;
-        }
-        html, body{
-            overflow-x: hidden; 
-        }
-        body{
-            background-color: whitesmoke;
-            position:relative;
-        }
-        .mobile-hide{
-            display:none;
-        }
-        .menu{
-            top:0;
-            left:0;
-            position:fixed;
-            width: 500px;
-            height: 100px;
-            background-color: black;
-            z-index: 1000;
-        }
-        .menu img{
-            float: left;
-            border-radius: 55px;
-            padding: 20px;
-        }
-        .menu h2{
-            text-align: center;
-            font-family: Raleway, sans-serif;
-            font-weight: 800;
-            color: whitesmoke;
-            font-size: 38px;
-            margin-bottom: 20px;
-            margin-right:140px;
-            z-index: 1000;
-        }
-        .container{
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 1px;
-        }
-        .main{
-            position:initial;
-            margin-top:100px;
-            align-self: center;
-            background-color: white;
-            padding: 50px;
-            -webkit-box-shadow: 1px 3px 10px 6px rgba(0,0,0,0.20); 
-            box-shadow: 1px 3px 10px 6px rgba(0,0,0,0.20);
-            width: 650px;
-        }
-        .main-header{
-            align-items: center;
-            align-self: center;
-            padding: 85px;
-        }
-        .main-body{
-            align-items: center;
-            align-self: center;
-            margin: 20px;
-            border: 1px solid #eee;
-            box-shadow: 1px 3px 12px 5px rgba(0,0,0,0.17);
-        }
-        .main-footer-checkout{
-            flex-direction: column;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-        }
-        .separator{
-            align-items: center;
-            align-self: center;
-            padding: 20px;
-            border: 1px solid #eee;
-        }
-        .circle{
-            width: 72px;
-            height: 72px;
-            border-radius: 100%;
-            background-color: #e8f0ff;
-            position: absolute;
-            margin-top: -50px;
-            cursor: pointer;
-            justify-content: center;
-            box-shadow: 1px 3px 12px 3px rgba(0,0,0,0.15);
-        }
-
-        .circle h4{
-            font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
-            font-weight: 600;
-            font-size:13px;
-            color: #7700ff;
-            margin-top:35px;
-        }
-
-        .circle h3{
-            font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
-            font-weight: 600;
-            font-size: 14px;
-            color: #02044a;
-            margin-top:-26px;
-        }
-
-        .circle i{margin-top:30px}
-
-        .left{margin-left:-80px;}
-        .middle{margin-left:50px;}
-        .right{margin-left:180px;}
-
-        .checked i{color: #7700ff !important;}
-
-        .active{background-color: #7700ff !important;}
-        .active i{color: white !important;}
-        
-        
-        .waiting i{color: #50607a !important;}
-        .waiting h4{color: #50607a !important; cursor:default;}
-
-        .standby{opacity: 0.6; cursor: default !important;}
-        .arrow{
-            display: flex;
-            width: 8px;
-            height: 8px;
-            padding: 16px;
-            border-radius: 100%;
-            background-color: #7700ff;
-            color: white;
-            cursor: pointer;
-            float: right; 
-            transition-duration: 0.3s;
-            justify-content: center;
-            text-align: center;
-            box-shadow: 1px 3px 10px 4px rgba(0,0,0,0.10);
-        }
-        .arrow:hover{
-            opacity: 0.6;
-        }
-        .arrow i{align-self: center;}
-
-        }
-
 
 
     </style>
+  <style>
+        
+    .infos{
+        padding: 60px;
+        text-align: center;
+    }
+    .infos h3{
+        font-family: Open Sans,Arial,sans-serif;
+        font-weight: 600;
+        font-size: 12px !important;
+        color: #011e3f!important;
+    }
+    .infos h4{
+        font-family: Open Sans,Arial,sans-serif;
+        font-weight: 500;
+        font-size: 13px !important;
+        color: #011e3f!important;
+    }
+    .pay-btn{
+
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        align-self: center;
+
+        background-color: black;
+        color: white;
+        
+        width: 100px;
+
+        padding-left: 4px;
+        padding-right: 4px;
+
+        padding-top: -1px;
+        padding-bottom: -1px;
+        
+        border-radius: 14px;
+
+        border: 2px solid #eee;
+        box-shadow: 1px 3px 9px 5px rgba(0,0,0,0.20);
+
+        transition-duration: 0.2s;
+
+        cursor: pointer;
+    }
+    .pay-btn h4{
+        font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        margin-left:5px;
+    }
+    .pay-btn i{margin-top:18px;}
+
+    .pay-btn:hover{opacity: 0.6;}
+
+    .payment-forms{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+    .checkout-form{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: left;
+        width: 100%;
+    }
+    .checkout-form h2{
+        font-family: Open Sans,Arial,sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        color: #011e3f!important;
+    }
+
+    .checkout-form span{
+        color: red;
+    }
+
+    .product-label{
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid #eee;
+        justify-content: space-between;
+        align-content:center;
+        padding:5px;
+    }
+    .product-label img{
+        width: 30%;
+        padding: 3px;
+    }
+    .product-label h1{
+        font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        color: #02044a;
+        padding:2px;
+        margin-top: 25px;
+    }
+    .product-label h2{
+        font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: #02044a;
+        padding:3px;
+        margin-top:65px;
+        margin-right: -15px;
+    }
+    .product-label h3{
+        font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
+        font-weight: 600;
+        color: #02044a;
+        padding:5px;
+        margin-top:-10px;
+    }
+    label{
+        -webkit-font-smoothing: antialiased;
+        word-wrap: break-word;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        -webkit-text-size-adjust: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        display: block;
+        line-height: 2;
+        font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+        color: #4f5e78!important;
+    }
+    input{  
+        -webkit-font-smoothing: antialiased;
+        word-wrap: break-word;
+        -webkit-text-size-adjust: 100%;
+        border: 1px solid #bbb;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 25px !important;
+        outline: 0;
+        -webkit-appearance: none;
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.7em;
+        border-style: solid;
+        height: auto;
+        padding-top: 11px;
+        padding-right: 8px;
+        padding-bottom: 11px;
+        padding-left: 8px;
+        color: #4f5e78;
+        font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif!important;
+        border-width: 1px;
+        border-color: #e2e4e9;
+        background-color: #fafbfc;
+        border-radius: 4px 4px 4px 4px;
+        overflow: hidden;
+    }
+    .hover-pay{
+        opacity:0.5;
+        cursor:pointer;
+    }
+    .active-pay{
+        opacity:1 !important;
+    }
+    .hover-pay:hover{
+        opacity:1;
+    }
+    .disabled{
+        opacity: 0.5 !important;
+    }
+    .disabled:hover{
+        opacity: 0.5 !important;
+    }
+    .ops{
+        font-family: Open Sans,Arial,sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        color: #011e3f!important;
+    }
+    .cnpj{
+        font-family: Open Sans,Arial,sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        color: #011e3f!important;
+        margin-left:0px;
+    }
+</style>
 
 </head>
+
 <body>
     <header>
         <div class="menu">
-        <a href="https://hypedx.com.br/Inicio"><img width="64" src="../Inicio/images/HypedX.jpg" alt=""></a>
-            <a href="https://hypedx.com.br/Inicio"><h2>HypedX</h2></a>
+            <a href="https://hypedx.com.br/Inicio"><h2>HPDX</h2></a>
         </div>
     </header>
     <br>
@@ -474,7 +503,7 @@
 
             <script>
                 function remove(id) { 
-                    window.location.href = 'remove.php?id=' + id;
+                    window.location.href = 'https://hypedx.com.br/src/desktop/components/remove-from-cart.php?id=' + id;
                  }
             </script>
 
@@ -493,46 +522,35 @@
                     <?php
                     if(isset($_SESSION['cartProds']))
                     {
+                        $a = explode(",", $a);
+    
+                        $b = explode(",", $b);
+    
+                        $c = explode(",", $c);
+    
+                        for ($i = 0; $i < sizeof($a); $i++){
+    
+    
+                            $q = "SELECT * FROM produtos WHERE id = ";
+    
+                            $q .= $a[$i];
+    
+                            $rn = $mysqli->query($q);
+                            
+                            $prod = $rn->fetch_array();
+                            
+                            $total = $total + $prod['preco'];
+    
+                            $imgs = explode(",", $prod['imagem']);
+                            
+
                     ?>
-                    <div class="product-label" style="background-color: #eee !important;">
-                        <div style="width: 50px;"></div>
-                        <h3 style="width: 124px !important;">PRODUTO</h3>
-                        <h3>PREÇO</h3>
-                        <h3 class="mobile-hide">QUANTIDADE</h3>
-                        <h3 class="mobile-hide">SUBTOTAL</h3>
-                        <h2 style="width: 25px !important;"></h2>
-                        <h3 class="mobile-hide" style="width: 5px !important;"></h3>
-                    </div>
-                    <?php
-                    $a = explode(",", $a);
 
-                    $b = explode(",", $b);
-
-                    $c = explode(",", $c);
-
-                    for ($i = 0; $i < sizeof($a); $i++){
-
-
-                        $q = "SELECT * FROM produtos WHERE id = ";
-
-                        $q .= $a[$i];
-
-                        $rn = $mysqli->query($q);
-                        
-                        $prod = $rn->fetch_array();
-                        
-                        $total = $total + $prod['preco'];
-
-                        $imgs = explode(",", $prod['img']);
-                    ?>
                     <div class="product-label">
-                        <img width="72" src="../Catalogo/images/<?php echo $imgs[0]; ?>" alt=""> 
-                        <h2 style="width: 120px !important; margin-left: -25px;"><?php echo $prod['nome']; ?></h2>
+                        <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt=""> 
+                        <h1><?php echo $prod['nome']; ?></h1>
                         <h2>R$<?php echo $prod['preco']; ?>,00</h2>
-                        <h2 class="mobile-hide">1</h2>
-                        <h2 class="mobile-hide">R$<?php echo $prod['preco']; ?>,00</h2>
-                        <h2 style="width: 26px !important;"><a style="text-decoration: none; font-size: 18px; color:#7700ff;" href="javascript:remove(<?php echo $prod['id']; ?>)">&times;</a></h2>
-                        <h2 class="mobile-hide" style="width: 5px !important;"></h2>
+                        <h3><a style="text-decoration: none; font-size: 18px; color:black;" href="javascript:remove(<?php echo $prod['id']; ?>)">&times;</a></h3>
                     </div>
                     <?php 
                             }
@@ -544,7 +562,7 @@
                     ?>
                 </div>
                 <div class="main-footer">
-                    <a style="text-decoration: none;" href="../Catalogo"><div style="background-color: white !important; color:#7700ff !important;" class="shop-btn"><i class="fa-solid fa-cart-shopping"><p> </p></i> <h2> Continuar Comprando</h2></div></a>
+                    <a style="text-decoration: none;" href="../categorias"><div style="background-color: white !important; color:black !important;" class="shop-btn"><i class="fa-solid fa-cart-shopping"><p> </p></i> <h2> Continuar Comprando</h2></div></a>
                     <?php
                     if(isset($_SESSION['cartProds']))
                     {
@@ -564,7 +582,6 @@
 
             <div id="checkout" class="main" style="display: none;">
                 <div class="main-header mobile">
-                    
                     <div class="circle left checked"><i class="fa-solid fa-check"></i><br><h4>1/3</h4><br><h3>Loja</h3></div>
                     <div onclick="location.reload()" class="circle middle checked"><i class="fa-solid fa-check"></i><br><h4>2/3</h4><br><h3>Carrinho</h3></div>
                     <div class="circle right active"><i class="fa-solid fa-credit-card"></i><br><h4>3/3</h4><br><h3>Pagamento</h3></div>
@@ -573,90 +590,198 @@
                 </div>
                 <br>
                 <div class="main-body">
+
                     <div class="checkout-form">
-                        <form id="formCad">
+
+                         <form id="formCad">
+                        <div class="separator">
+
+                        <h2>Informações para o Envio:</h2>
+
+
+
+                        <label for="end">Endereço: <span>*</span> </label>
+
+                        <input onkeydown="checkForm();" required placeholder="Av. Brasil" type="text" name="" id="end">
+
+                        <br>
+
+                        <label for="n">Nº: <span>*</span> </label>
+
+                        <input onkeydown="checkForm();" required placeholder="3113" type="text" name="" id="n" >
+
+                        <br>
+
+                        <label for="cep">CEP: <span>*</span> </label>
+
+                        <input onkeydown="$(this).mask('00000-000'); checkForm()" required placeholder="02431020" type="postal" name="" id="cep" >
+
+                        <br>
+
+                        <label for="compl">Complemento: </label>
+
+                        <input onkeydown="checkForm();" placeholder="Apartamento 212 bloco A" type="text" name="" id="compl">
+
+                        </div>
                             <div class="separator">
+
+                                <style>
+                                    .checkout-form span{
+                                        color:white !important;
+                                    }
+                                </style>
+
 
                                 <h2>Informações de Cobrança:</h2>
 
+
+                                <br>
+
                                 <label for="name">Nome: <span>*</span> </label>
-                                <input required placeholder="Seu nome" type="text" name="" id="nome" style="width: 100px !important;">
+
+                                <input onkeydown="checkForm();" required placeholder="Seu nome" type="text" name="" id="nome" >
+
                                 <br>
+
                                 <label for="midname">Sobrenome: <span>*</span> </label>
-                                <input required placeholder="Seu sobrenome" type="text" name="" id="midname" style="width: 150px !important;">
+
+                                <input onkeydown="checkForm();" required placeholder="Seu sobrenome" type="text" name="" id="midname" >
+
                                 <br>
+
                                 <br>
+
                                 <label for="email">Email: <span>*</span> </label>
-                                <input required placeholder="email@hotmail.com" type="email" name="" id="email" style="width: 250px !important;">
+
+                                <input onkeydown="checkForm();" required placeholder="email@hotmail.com" type="email" name="" id="email" >
+
                                 <br>
+
                                 <label for="tel">Celular: <span>*</span> </label>
-                                <input onkeydown="$(this).mask('(00) 00000-0000');" required placeholder="(11) 99999-9999" type="phone" name="" id="tel" style="width: 200px !important;">
+
+                                <input onkeydown="$(this).mask('(00) 00000-0000'); checkForm();" required placeholder="(11) 99999-9999" type="phone" name="" id="tel" >
+
                                 
-                            </div>
-                            <br>
-                            <br>
-                            <div class="separator">
-                                <h2>Informações para o Envio:</h2>
+                                <?php
+                                // Cria um objeto de preferência
+                                $preference = new MercadoPago\Preference();
 
-                                <label for="end">Endereço: <span>*</span> </label>
-                                <input required placeholder="Av. Brasil" type="text" name="" id="end">
-                                <br>
-                                <label for="n">Nº: <span>*</span> </label>
-                                <input required placeholder="3113" type="text" name="" id="n" style="width: 75px !important;">
-                                <br>
-                                <label for="cep">CEP: <span>*</span> </label>
-                                <input onkeydown="$(this).mask('00000-000');" required placeholder="02431020" type="postal" name="" id="cep" style="width: 150px !important;">
-                                <br>
-                                <label for="compl">Complemento: </label>
-                                <input placeholder="Apartamento 212 bloco A" type="text" name="" id="compl" style="width: 200px !important;">
-                            </div>
-                            <br>
-                            <br>
-                            <div class="separator">
+                                // Cria um item na preferência
+                                $item = new MercadoPago\Item();
 
-                                <h2>Formas de Pagamento:</h2>
-                                <div class="payment-forms">
-                                    <br>
-                                    <br>
-                                    <img class="hover-pay" width="100" id="mercc" onclick="choosePlat('merc'); $(this).toggleClass('active-pay');" src="images/mercadopago.jpg" alt="">
-                                    <img class="hover-pay" width="100" id="pagg" onclick="alert('PagSeguro está em manutenção no momento, por favor escolha outra plataforma ou entre em contato conosco.')" src="images/pagseguro.jpg" alt="">
-                                    <!-- <img class="hover-pay" width="100" id="pagg" onclick="choosePlat('pag'); $(this).toggleClass('active-pay'); " src="images/pagseguro.jpg" alt=""> -->
-                                    <br>
-                                </div>
+                                $item->title = 'HPDX - Carrinho';
 
-                            </div>
-                            <br>
-                            <div class="separator">
+                                $item->quantity = 1;
+                                $item->unit_price = $total;
 
-                                <div class="infos">
-                                    <h3>Produtos: R$<?php echo $total; ?>,00</h3>
-                                    <h3>Descontos: R$0,00</h3>
-                                    <h3>Frete: R$0,00</h3>
-                                    <h2>Subtotal: R$<?php echo $total; ?>,00</h2>
-                                    <hr />
+                                $preference->items = array($item);
+
+                                $preference->back_urls = array(
+                                    "success" => "http://www.hypedx.com.br/purchase-status",
+                                    "failure" => "http://www.hypedx.com.br/purchase-status",
+                                    "pending" => "http://www.hypedx.com.br/purchase-status"
+                                );
+                                $preference->auto_return = "approved";
+
+                                $preference->save();
+
+                                ?> 
+                                <style>
+                                    #payment-label{
+                                        display: none;
+                                        padding: auto;
+                                        margin: 0;
+                                    }
+                                    .payment-align{
+                                        display:flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        text-align: center;
+                                        flex-direction: column;
+                                    }
+                                </style>
+                                <div id="payment-label">
+                                    <div class="payment-align">
+                                    <h2>Total a ser pago: R$ <?php echo $total; ?>,00</h2>
+                                    <br>
+                                    <div id="wallet_container"></div>
                                     <br>
                                     <br>
-                                    <hr />
-                                    <h2>Total: R$<?php echo $total; ?>,00</h2>
-                                    <hr />
-                                    <br>
-                                    <h3 style="display: none;" id="mercform">Forma de Pagamento: MercadoPago</h3>
-                                    <h3 style="display: none;" id="pagform">Forma de Pagamento: PagSeguro</h3>
-                                    <br>
-                                    <div class="main-footer-checkout">
-                                        
-                                        <div id="paybtn" onclick="$('#formCad').submit();" class="pay-btn standby"><i class="fa-solid fa-lock"></i><h4 style="color:white !important;">Pagar</h4></div>
-                                        <!-- <div id="paybtn" onclick="$('#checkout').hide();$('#loader').show();" class="pay-btn standby"><i class="fa-solid fa-lock"></i><h4 style="color:white !important;">Pagar</h4></div> -->
-                                        <br>
-                                        <p class="obs mobile-hide">(Você será redirecionado para a plataforma escolhida p/ realizar o pagamento com segurança e privacidade).</p>
+    
+                                    <img style="padding: 5px; width:85%;" src="https://hpdx.hypedx.com.br/assets/images/banners/mp.png" alt="">
                                     </div>
                                 </div>
 
+
+
+                                <script>
+                                    mp.bricks().create("wallet", "wallet_container", {
+                                        initialization: {
+                                            preferenceId: "<?php echo $preference->id ?>",
+                                            locale: 'pt-BR',
+                                        },
+                                    });
+
+                                    </script>
                             </div>
 
+                                    <style>
+                                        #wallet_container button{
+                                            background-color:black !important;
+                                            width: 200px !important;
+                                            align-self: center !important;
+                                            margin: 0 auto !important;
+                                            flex:1 !important;
+                                        }
+                                    </style>
+                                    <script>
+
+                                        function checkForm() {
+
+                                            var nome = $('#nome').val();
+                                            var email = $('#email').val();
+                                            var tel = $('#tel').val();
+                                            var cep = $('#cep').val();
+                                            var num = $('#n').val();
+
+                                            if(nome.length > 3 && email.length > 10 && tel.length > 11 && cep.length > 6 && num.length > 0){
+                                                $('#payment-label').slideDown(200);
+                                            }else{
+                                                $('#payment-label').slideUp(200);
+                                            }
+                                        }
+
+                                    </script>
+                            <br>
+
+                            <div>
+
+
+                                        </div>
+
+                                      </div>
+
+
+                                    </div>
+
+                                    
+
+                            </div>
+
+                            <br>
+
+
+                            </div>
+
+
+
                         </form>
+
                     </div>
-                </div>
+                    
+                 
+
+                    
 
             </div>
             
@@ -665,309 +790,11 @@
         </div>
     </section>
 
-    <style>
-        
-        .infos{
-            padding: 60px;
-            text-align: center;
-        }
-        .infos h3{
-            font-family: Open Sans,Arial,sans-serif;
-            font-weight: 600;
-            font-size: 12px !important;
-            color: #011e3f!important;
-        }
-        .infos h4{
-            font-family: Open Sans,Arial,sans-serif;
-            font-weight: 500;
-            font-size: 13px !important;
-            color: #011e3f!important;
-        }
-        .pay-btn{
-
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            align-content: center;
-            align-self: center;
-
-            background-color: #7700ff;
-            color: white;
-            
-            width: 100px;
-
-            padding-left: 4px;
-            padding-right: 4px;
-
-            padding-top: -1px;
-            padding-bottom: -1px;
-            
-            border-radius: 14px;
-
-            border: 2px solid #eee;
-            box-shadow: 1px 3px 9px 5px rgba(0,0,0,0.20);
-
-            transition-duration: 0.2s;
-
-            cursor: pointer;
-        }
-        .pay-btn h4{
-            font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
-            font-weight: 600;
-            font-size: 14px;
-            margin-left:5px;
-        }
-        .pay-btn i{margin-top:18px;}
-
-        .pay-btn:hover{opacity: 0.6;}
-
-        .payment-forms{
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-        }
-        .checkout-form{
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            padding: 50px;
-            text-align: left;
-        }
-        .checkout-form h2{
-            font-family: Open Sans,Arial,sans-serif;
-            font-weight: 700;
-            font-size: 18px;
-            color: #011e3f!important;
-        }
-
-        .checkout-form span{
-            color: red;
-        }
-
-        .product-label{
-            display: flex;
-            flex-direction: row;
-            border-bottom: 1px solid #eee;
-            justify-content: space-between;
-            align-content:center;
-        }
-        .product-label img{
-            float: left;
-        }
-        .product-label h2{
-            font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
-            font-weight: 600;
-            font-size: 14px;
-            color: #02044a;
-            width: 30px;
-            margin-top:24px;
-        }
-        .product-label h3{
-            font-family: Open Sans,Arial,sans-serif;
-            font-weight: 700;
-            font-size: 12px;
-            color: #4f5e78 !important;
-            width: 30px;
-        }
-        @media screen and (max-width: 700px){
-            .mobile{
-                margin-left:50px; 
-            }
-            .product-label{
-            display: flex;
-            flex-direction: row;
-            border-bottom: 1px solid #eee;
-            justify-content: space-between;
-            align-content:center;
-            width: 300px;
-            padding:1px;
-        }
-        .product-label img{
-            float: left;
-        }
-        .product-label h2{
-            font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
-            font-weight: 600;
-            font-size: 12px;
-            color: #02044a;
-            width: 30px;
-            margin-top:24px;
-        }
-        .product-label h3{
-            font-family: Open Sans,Arial,sans-serif;
-            font-weight: 700;
-            font-size: 12px;
-            color: #4f5e78 !important;
-            width: 30px;
-        }
-        }
-        label{
-            -webkit-font-smoothing: antialiased;
-            word-wrap: break-word;
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            border: 0;
-            outline: 0;
-            -webkit-text-size-adjust: 100%;
-            vertical-align: baseline;
-            background: transparent;
-            display: block;
-            line-height: 2;
-            font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
-            font-weight: 500;
-            font-size: 12px;
-            color: #4f5e78!important;
-        }
-        input{  
-            -webkit-font-smoothing: antialiased;
-            word-wrap: break-word;
-            -webkit-text-size-adjust: 100%;
-            border: 1px solid #bbb;
-            box-sizing: border-box;
-            width: 100%;
-            margin: 0;
-            margin-bottom: 25px !important;
-            outline: 0;
-            -webkit-appearance: none;
-            max-width: 100%;
-            font-size: 14px;
-            line-height: 1.7em;
-            border-style: solid;
-            height: auto;
-            padding-top: 11px;
-            padding-right: 8px;
-            padding-bottom: 11px;
-            padding-left: 8px;
-            color: #4f5e78;
-            font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif!important;
-            border-width: 1px;
-            border-color: #e2e4e9;
-            background-color: #fafbfc;
-            border-radius: 4px 4px 4px 4px;
-            overflow: hidden;
-        }
-        .hover-pay{
-            opacity:0.5;
-            cursor:pointer;
-        }
-        .active-pay{
-            opacity:1 !important;
-        }
-        .hover-pay:hover{
-            opacity:1;
-        }
-        .disabled{
-            opacity: 0.5 !important;
-        }
-        .disabled:hover{
-            opacity: 0.5 !important;
-        }
-        .ops{
-            font-family: Open Sans,Arial,sans-serif;
-            font-weight: 700;
-            font-size: 18px;
-            color: #011e3f!important;
-        }
-        .cnpj{
-            font-family: Open Sans,Arial,sans-serif;
-            font-weight: 700;
-            font-size: 11px;
-            color: #011e3f!important;
-            margin-left:0px;
-        }
-    </style>
-
-        <input type="hidden" id="platform" value="">
   
-  <script>
+  
+  
 
-      function alterText() {
-          $("#text1").hide(100);
-          $("#text2").show(100);
-      }
-
-    $(function() {
-        $('#formCad').on('submit', function(e) {
-            e.preventDefault();
-    
-                var nome = $('#nome').val();
-                var email = $('#email').val();
-                var tel = $('#tel').val();
-                var cep = $('#cep').val();
-                var num = $('#n').val();
-                var pw = "12345678";
-
-            if(nome.length > 3 && email.length > 10 && tel.length > 8 && cep.length > 6 && num.length > 0 && window.enabled == "true"){
-                
-                $("#checkout").hide();
-                $("#loader").show();
-
-				myVar = setTimeout(alterText, 2500);
-                
-            $.ajax({
-                type: 'post',
-                url: 'https://hypedx.com.br/Carrinho/cadastro.php',
-                data: {
-                    getNome: nome,
-                    getEmail: email,
-                    getTel: tel,
-                    getCep: cep,
-                    getPw: pw,
-                    getNum: num
-                },
-                success: function (data) {
-                    
-                    var total = "<?php echo $total; ?>";
-                    var pay = "null";
-                    var platform = $("#platform").val()
-
-                    var descri = "<?php echo $descricao?>";
-                    
-                        if(platform == 'mercadopago'){
-                            window.location.href = 'checkout/mercadopago/?total=' + total + '&payment=' + pay;
-                        }
-                        if(platform == "pagseguro"){
-                            window.location.href = 'checkout/pagseguro/?total=' + total + '&payment=' + pay + '&descri=' + descri;
-                        }
-    
-                }
-    
-            });
-            }else{
-    
-                alert('Verifique se os campos estão preenchidos e/ou a forma de pagamento está selecionada.')
-    
-            }
-        });
-    });
-    
-    </script>
-        <script>
-            function choosePlat(a) {
-
-                $('#mercform').hide();
-                $('#pagform').hide();
-
-                if(a == "pag"){
-                    $("#platform").val("pagseguro");
-                    $('#pagform').show(500);
-                }
-                if(a == "merc"){
-                    $("#platform").val("mercadopago");
-                    $('#mercform').show(500);
-                }
-
-                $('#mercc').removeClass('active-pay');
-                $('#pagg').removeClass('active-pay');
-
-                $('#paybtn').removeClass('standby');
-
-                window.enabled = "true";
-            }
-        </script>
-        <a class="mobile-hide" href="https://wa.me/551151998446?text=Poderiam%20me%20ajudar?" style="position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888;
+        <a class="mobile-hide" href="https://wa.me/5511911372596?text=Poderiam%20me%20ajudar?" style="position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888;
         z-index:1000;" target="_blank">
             <i style="margin-top:16px" class="fa fa-whatsapp"></i>
       </a>

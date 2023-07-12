@@ -1,5 +1,5 @@
 <style>
-    .container{
+    .alignment{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -8,12 +8,12 @@
         margin-bottom: 5%;
     }
     .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    padding: 30px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        padding: 30px;
     }
     .grid-item{
         width: 200px;
@@ -25,41 +25,42 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
     }
     .i-00{
-        background-image: url('../assets/images/products/produto1.jpg');
+        background-image: url('https://hpdx.hypedx.com.br/assets/images/products/produto1.jpg');
         background-size: cover;
     }
     .i-01{
-        background-image: url('../assets/images/products/produto2.jpg');
+        background-image: url('https://hpdx.hypedx.com.br/assets/images/products/produto2.jpg');
         background-size: cover;
     }
     .i-02{
-        background-image: url('../assets/images/products/produto3.jpg');
+        background-image: url('https://hpdx.hypedx.com.br/assets/images/products/produto3.jpg');
         background-size: cover;
     }
     .i-03{
-        background-image: url('../assets/images/products/produto4.jpg');
+        background-image: url('https://hpdx.hypedx.com.br/assets/images/products/produto4.jpg');
         background-size: cover;
     }
     .i-04{
-        background-image: url('../assets/images/products/produto5.jpg');
+        background-image: url('https://hpdx.hypedx.com.br/assets/images/products/produto5.jpg');
         background-size: cover;
     }
     .i-05{
-        background-image: url('../assets/images/products/produto1.jpg');
+        background-image: url('https://hpdx.hypedx.com.br/assets/images/products/produto1.jpg');
         background-size: cover;
     }
     .i-06{
-        background-image: url('../assets/images/products/produto1.jpg');
+        background-image: url('https://hpdx.hypedx.com.br/assets/images/products/produto1.jpg');
         background-size: cover;
     }
     .i-07{
-        background-image: url('../assets/images/products/produto1.jpg');
+        background-image: url('https://hpdx.hypedx.com.br/assets/images/products/produto1.jpg');
         background-size: cover;
     }
     .i-08{
-        background-image: url('../assets/images/products/produto1.jpg');
+        background-image: url('https://hpdx.hypedx.com.br/assets/images/products/produto1.jpg');
         background-size: cover;
     }
     .grid-item:hover{
@@ -71,34 +72,34 @@
     }
 </style>
 
-<div class="container">
+<div id="categorys" class="alignment">
     <h2>Categorias:</h2>
 <div class="grid">
-    <div class="grid-item i-00">
+    <div onclick="$('#hidden').show(); $('#categorys').hide(); $('#hundred').show(500)" class="grid-item i-00">
         <h1>Abaixo de R$100</h1>
     </div>
-    <div class="grid-item i-01">
+    <div onclick="$('#hidden').show(); $('#categorys').hide(); $('#colares').show(500)" class="grid-item i-01">
         <h1>Colares</h1>
     </div>
-    <div class="grid-item i-02">
+    <div onclick="$('#hidden').show(); $('#categorys').hide(); $('#pulseiras').show(500)" class="grid-item i-02">
         <h1>Pulseiras</h1>
     </div>
-    <div class="grid-item i-03">
+    <div onclick="$('#hidden').show(); $('#categorys').hide(); $('#relogios').show(500)" class="grid-item i-03">
         <h1>Relógios</h1>
     </div>
-    <div class="grid-item i-04">
+    <div onclick="$('#hidden').show(); $('#categorys').hide(); $('#kits').show(500)" class="grid-item i-04">
         <h1>Kits</h1>
     </div>
-    <div class="grid-item i-05">
+    <div onclick="$('#hidden').show(); $('#categorys').hide(); $('#brincos').show(500)" class="grid-item i-05">
         <h1>Brincos</h1>
     </div>
-    <div class="grid-item i-06">
+    <div onclick="$('#hidden').show(); $('#categorys').hide(); $('#promos').show(500)" class="grid-item i-06">
         <h1>Promoções</h1>
     </div>
-    <div class="grid-item i-07">
+    <div onclick="$('#hidden').show(); $('#categorys').hide(); $('#pingentes').show(500)" class="grid-item i-07">
         <h1>Pingentes</h1>
     </div>
-    <div class="grid-item i-08">
+    <div onclick="$('#hidden').show(); $('#categorys').hide(); $('#aneis').show(500)" class="grid-item i-08">
         <h1>Anéis</h1>
     </div>
 </div>

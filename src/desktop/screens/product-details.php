@@ -11,13 +11,27 @@ $exe = $mysqli->query($sql);
 $prod = $exe->fetch_array();
 
 $imgs = explode(",", $prod['imagem']);
+
+$categoria = $prod['categoria'];
+$id = $prod['id'];
 ?>
-<!DOCTYPE html>
-<html>
-<head>
+
   <title><?php echo $prod['nome']; ?></title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta property="og:title" content="<?php echo $prod['nome']?>">
+  <meta property="og:description" content="<?php echo $prod['descricao_principal']?>">
+  <meta property="og:url" content="https://hypedx.com.br/produto/<?php echo $prod['href']?>">
+  <meta property="og:image" content="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]?>">
+  <meta property="product:brand" content="HPDX">
+  <meta property="product:availability" content="in stock">
+  <meta property="product:condition" content="new">
+  <meta property="product:price:amount" content="<?php echo $prod['preco']?>">
+  <meta property="product:price:currency" content="BRL">
+  <meta property="product:retailer_item_id" content="jewelry_<?php echo $prod['categoria']?>_<?php echo $prod['id']?>">
+  <meta property="product:item_group_id" content="fb_jewelry_<?php echo $prod['categoria']?><?php echo $prod['id']?>">
 
 <style>
   body {
@@ -41,7 +55,7 @@ $imgs = explode(",", $prod['imagem']);
     background-color: #ffffff;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    width: 50%;
+    width: 70%;
     text-align: center;
   }
 
@@ -49,12 +63,15 @@ $imgs = explode(",", $prod['imagem']);
     display: flex;
     flex-direction: column;
   }
-  .principal img{
-    width: 300px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  .principal{
+    margin-bottom: 15px;
     cursor: pointer;
+    padding: 35px;
+  }
+  .principal img{
+    width: 350px;
+    border-radius: 25px;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
   }
   .secondary img{
     width: 150px;
@@ -63,7 +80,7 @@ $imgs = explode(",", $prod['imagem']);
 
 
   .product-info {
-    width: 70%;
+    width: 75%;
   }
 
   .product-title {
@@ -74,15 +91,17 @@ $imgs = explode(",", $prod['imagem']);
   }
 
   .product-description {
+    font-size: 24px;
     margin-bottom: 15px;
     color: #666666;
   }
 
   .product-price {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #ff6600;
+    padding: 15px;
+    color: black;
   }
 
   .product-variants {
@@ -94,7 +113,7 @@ $imgs = explode(",", $prod['imagem']);
   }
 
   .variant-label {
-    font-size: 16px;
+    font-size: 24px;
     font-weight: bold;
     color: #333333;
   }
@@ -106,8 +125,8 @@ $imgs = explode(",", $prod['imagem']);
 
   .variant-option {
     display: inline-block;
-    padding: 5px 10px;
-    font-size: 14px;
+    padding: 10px 18px;
+    font-size: 28px;
     color: #ffffff;
     background-color: #333333;
     border-radius: 20px;
@@ -124,34 +143,35 @@ $imgs = explode(",", $prod['imagem']);
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 100%;
   }
 
   .cta-button {
     display: inline-block;
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 16px 24px;
+    font-size: 24px;
     font-weight: bold;
     text-decoration: none;
     color: #ffffff;
-    background-color: #ff6600;
+    background-color: #333333;
     border-radius: 30px;
     transition: background-color 0.3s ease;
     animation: pulse 1.5s infinite;
   }
 
   .cta-button:hover {
-    background-color: #ff4500;
+    background-color: black;
     animation: none;
   }
 
   .add-to-cart-button {
     display: inline-block;
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 14px 22px;
+    font-size: 22px;
     font-weight: bold;
     text-decoration: none;
-    color: #ffffff;
-    background-color: #333333;
+    color: black;
+    background-color: #ffffff;
     border-radius: 30px;
     transition: background-color 0.3s ease;
     margin-top: 15px;
@@ -165,7 +185,7 @@ $imgs = explode(",", $prod['imagem']);
   .related-products {
     margin-top: 50px;
     border-top: 1px solid gray;
-    width: 60%;
+    width: 85%;
   }
 
   .related-products h3 {
@@ -223,10 +243,36 @@ $imgs = explode(",", $prod['imagem']);
       transform: scale(1);
     }
   }
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+
 </style>
+
 
 </head>
 <body>
+
+<div itemscope itemtype="http://schema.org/Product">
+  <meta itemprop="brand" content="HPDX">
+  <meta itemprop="name" content="<?php echo $prod['nome']?>">
+  <meta itemprop="description" content="<?php echo $prod['descricao_principal']?>">
+  <meta itemprop="productID" content="<?php echo $prod['id']?>">
+  <meta itemprop="url" content="https://hypedx.com.br/produto/<?php echo $prod['href']?>">
+  <meta itemprop="image" content="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]?>">
+  <div itemprop="value" itemscope itemtype="http://schema.org/PropertyValue">
+    <span itemprop="propertyID" content="jewelry_<?php echo $prod['categoria']?>_<?php echo $prod['id']?>"></span>
+    <meta itemprop="value" content="fb_jewelry_<?php echo $prod['categoria']?><?php echo $prod['id']?>"></meta>
+  </div>
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <link itemprop="availability" href="http://schema.org/InStock">
+    <link itemprop="itemCondition" href="http://schema.org/NewCondition">
+    <meta itemprop="price" content="<?php echo $prod['preco']?>">
+    <meta itemprop="priceCurrency" content="BRL">
+  </div>
+</div>
+
 
 <?php
 include('src/desktop/components/navigation.html')
@@ -235,32 +281,34 @@ include('src/desktop/components/navigation.html')
     <div class="product-view">
         <div class="product-images">
             <div class="principal">
-                <img src="../assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 1">
+                <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 1">
             </div>
-          <div class="secondary">
-            <img src="../assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 2">
-            <img src="../assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 3">
-          </div>
+          <!-- <div class="secondary">
+            <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 2">
+            <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 3">
+          </div> -->
 
         </div>
         <br>
         <div class="product-info">
           <h2 class="product-title"><?php echo $prod['nome']?></h2>
           <p class="product-description"><?php echo $prod['descricao_principal']?></p>
-          <p class="product-price">R$<?php echo $prod['preco']?>,00</p>
           <br>
           <br>
-
+          
           <div class="product-variants">
             <label class="variant-label">Variação:</label>
+            <br>
+            <br>
             <div class="variant-options">
               <div class="variant-option">Prata</div>
               <div class="variant-option">Ouro</div>
             </div>
           </div>
-
+          
           <br>
           <br>
+          <p class="product-price">R$<?php echo $prod['preco']?>,00</p>
           <br>
 
           <div class="buttons">
@@ -276,33 +324,33 @@ include('src/desktop/components/navigation.html')
         <br>
         <br>
 
-            <h3>Você também pode gostar:</h3>
             <br>
             <br>
 
-            <div class="product-item">
-              <img src="../assets/images/products/produto2.jpg" alt="Related Product 1">
-              <div class="related-infos">
+            <?php      
+              $query = "SELECT * FROM produtos WHERE categoria = '$categoria' AND id <> '$id' ORDER BY id DESC";
+              $run = $mysqli->query($query);
+              $row = mysqli_num_rows($run);    
+          
+              while ($produto = $run->fetch_array()):
+              
+              $imgs = explode(",", $produto['imagem']);
+        
+            ?>
 
-              <p class="related-product-title">Produto Relacionado 1</p>
-              <p class="related-product-price">R$30,00</p>
-            </div>
-        </div>
-            <div class="product-item">
-              <img src="../assets/images/products/produto3.jpg" alt="Related Product 2">
-              <div class="related-infos">
-              <p class="related-product-title">Produto Relacionado 2</p>
-              <p class="related-product-price">R$30,00</p>
-            </div>
-            </div>
-            <div class="product-item">
-              <img src="../assets/images/products/produto4.jpg" alt="Related Product 3">
-              <div class="related-infos">
+              <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ?>">
+                <div class="product-item">
+                  <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0] ?>" alt="Related Product 1">
+                    <div class="related-infos">
 
-              <p class="related-product-title">Produto Relacionado 3</p>
-              <p class="related-product-price">R$30,00</p>
-            </div>
-        </div>
+                    <p class="related-product-title"><?php echo $produto['nome'] ?></p>
+                    <p class="related-product-price">R$<?php echo $produto['preco'] ?>,00</p>
+                  </div>
+                </div>
+              </a>
+
+            <?php endwhile ?> 
+
           </div>
       </div>
 </div>

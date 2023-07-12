@@ -19,7 +19,7 @@
   background: linear-gradient(to right, #3f4c6b, #606c88);
   padding: 30px;
   border-radius: 10px;
-  max-width: 550px;
+  max-width: 800px;
 }
 
 .title {
@@ -54,7 +54,7 @@
   border: 1px solid rgba(253, 253, 253, 0.363);
   border-radius: 0.375rem;
   flex: 1 1 auto;
-  width: 80%;
+  width: 200px;
 }
 
 .form div input::placeholder {
@@ -88,7 +88,7 @@
   <span class="title">Se inscreva em nossa Newsletter.</span>
   <p class="description">Receba em primeira mão todas as novidades/lançamentos e nossas promoções mais congelantes. Vai ficar de fora dessa?</p>
   <div>
-    <input placeholder="Digite o seu melhor e-mail" type="email" name="email" id="email-address">
+    <input placeholder="Digite o seu melhor e-mail" style='width:500px' type="email" name="email" id="email-address">
     <button type="submit">Inscrever</button>
   </div>
 </form>

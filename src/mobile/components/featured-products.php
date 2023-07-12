@@ -114,10 +114,12 @@
     $row = mysqli_num_rows($run);    
 
     while ($produto = $run->fetch_array()):
+
+      $imgs = explode("," , $produto['imagem']);
   ?>
 <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ?>">
     <div class="product-box">
-      <img src="../assets/images/products/<?php echo $produto['imagem']; ?>" alt="Produto 1">
+      <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0] ?>" alt="">
       <div class="product-infos">
         <h2><?php echo $produto['nome'] ?></h2>
         <p><?php echo $produto['descricao_principal'] ?></p>

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
+
   <meta charset="UTF-8">
   <title>HypedX Store - Início</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -11,6 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!-- Primary Meta Tags -->
 <title>HypedX — Quanto vale seu estilo?</title>
 <meta name="title" content="HypedX — Quanto vale seu estilo?">
@@ -30,8 +30,28 @@
 <meta property="twitter:description" content="A HYPEDX é uma empresa dedicada à criação e comercialização de semijoias de alta qualidade. Nossa missão é oferecer peças exclusivas e elegantes, que realçam a beleza e a sofisticação de quem as usa.">
 <meta property="twitter:image" content="https://hypedx.com.br/assets/images/banners/frete.png">
 
+
+<script src="https://kit.fontawesome.com/b37cf30113.js" crossorigin="anonymous"></script>
+
   <style>
-    /* CSS */
+              ::-webkit-scrollbar {
+                width: 10px;
+              }
+              
+              ::-webkit-scrollbar-track {
+                background: #f1f1f1; 
+              }
+               
+              ::-webkit-scrollbar-thumb {
+                background: #888; 
+              }
+              
+              ::-webkit-scrollbar-thumb:hover {
+                background: #555; 
+              }
+    html{
+      scroll-behavior: smooth;
+    }
     body {
       font-family: Arial, sans-serif;
       text-align: center;
@@ -39,7 +59,7 @@
       margin:0 auto;
       padding:0;
     }
-    
+
     h1 {
       color: #014A6E;
     }
@@ -145,10 +165,20 @@
     <?php 
         include("src/desktop/components/footer.html")
     ?>
-</body>
-<script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-</script>
+
+<a class="mobile-hide" href="https://wa.me/5511911372596?text=Poderiam%20me%20ajudar?" style="position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888;
+        z-index:1000;" target="_blank">
+            <i style="margin-top:16px" class="fa fa-whatsapp"></i>
+      </a>
+
+</body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+      document.addEventListener('touchstart', onTouchStart, {passive: true});
+    </script>
+
 </html>

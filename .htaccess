@@ -1,12 +1,5 @@
 
 
-# php -- BEGIN cPanel-generated handler, do not edit
-# Set the “ea-php81” package as the default “PHP” programming language.
-<IfModule mime_module>
-  AddHandler application/x-httpd-ea-php81___lsphp .php .php8 .phtml
-</IfModule>
-# php -- END cPanel-generated handler, do not edit
-
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteRule ^inicio/?$ /index.php [NC,L]
@@ -15,3 +8,26 @@
     RewriteCond %{SCRIPT_FILENAME} !-d
     RewriteRule ^(.*)$ index.php?param=$1
 </IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault A300
+ExpiresByType image/x-icon A2592000
+ExpiresByType application/x-javascript A3600
+ExpiresByType text/css A3600
+ExpiresByType image/gif A604800
+ExpiresByType image/png A604800
+ExpiresByType image/jpeg A604800
+ExpiresByType text/plain A300
+ExpiresByType application/x-shockwave-flash A604800
+ExpiresByType video/x-flv A604800
+ExpiresByType application/pdf A604800
+ExpiresByType text/html A300
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php81” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php81___lsphp .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

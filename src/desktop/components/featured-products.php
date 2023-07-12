@@ -19,6 +19,7 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     margin-top: 50px;
+    margin-bottom:50px;
   }
 
   .product-box {
@@ -30,6 +31,7 @@
     margin: 10px;
     padding: 20px;
     border-radius: 10px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,7 +122,7 @@
   ?>
 <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ?>">
     <div class="product-box">
-      <img src="../assets/images/products/<?php echo $imgs[0]; ?>" alt="Produto 1">
+      <img width="160" height="160" loading="lazy" src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt="Produto 1">
       <div class="product-infos">
         <h2><?php echo $produto['nome'] ?></h2>
         <p><?php echo $produto['descricao_principal'] ?></p>
@@ -132,5 +134,5 @@
 </div>
 
 <div class="button-role">
-        <a class="button-see-more" href="">Ver mais</a>
+        <a class="button-see-more" href="../categorias">Ver mais</a>
     </div>
