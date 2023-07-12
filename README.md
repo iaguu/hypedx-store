@@ -1,6 +1,6 @@
 # README
 
-Este é um arquivo README para o projeto hospedado no GitHub. O código fornecido é um exemplo de um roteador em PHP que trata diferentes rotas e inclui arquivos correspondentes com base nos parâmetros fornecidos.
+Este é um arquivo README para o projeto hospedado no GitHub. O código fornecido no `index.php` (entry-point da aplicação) é um exemplo de um roteador em PHP que trata diferentes rotas e inclui arquivos correspondentes com base nos parâmetros fornecidos.
 
 ## Requisitos
 
