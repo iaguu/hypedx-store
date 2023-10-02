@@ -1,5 +1,4 @@
 
-  <meta charset="UTF-8">
   <title>HypedX Store - Início</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <!-- Importar a biblioteca jQuery -->
@@ -21,14 +20,14 @@
 <meta property="og:url" content="https://hypedx.com.br">
 <meta property="og:title" content="HypedX — Quanto vale seu estilo?">
 <meta property="og:description" content="A HYPEDX é uma empresa dedicada à criação e comercialização de semijoias de alta qualidade. Nossa missão é oferecer peças exclusivas e elegantes, que realçam a beleza e a sofisticação de quem as usa.">
-<meta property="og:image" content="https://hypedx.com.br/assets/images/banners/frete.png">
+<meta property="og:image" content="https://hpdx.hypedx.com.br/assets/images/banners/frete.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://hypedx.com.br">
 <meta property="twitter:title" content="HypedX — Quanto vale seu estilo?">
 <meta property="twitter:description" content="A HYPEDX é uma empresa dedicada à criação e comercialização de semijoias de alta qualidade. Nossa missão é oferecer peças exclusivas e elegantes, que realçam a beleza e a sofisticação de quem as usa.">
-<meta property="twitter:image" content="https://hypedx.com.br/assets/images/banners/frete.png">
+<meta property="twitter:image" content="https://hpdx.hypedx.com.br/assets/images/banners/frete.png">
 
 
 <script src="https://kit.fontawesome.com/b37cf30113.js" crossorigin="anonymous"></script>
@@ -110,8 +109,13 @@
     <br>
   <!-- Seção de Produtos Mais Vendidos -->
 
-    <?php
+  <?php
     include('src/desktop/components/featured-products.php')
+    ?>
+  <!-- Seção de Todos os Produtos  -->
+
+<?php
+    include('src/desktop/components/all-products.php')
     ?>
 
 

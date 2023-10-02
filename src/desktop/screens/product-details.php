@@ -295,6 +295,9 @@ include('src/desktop/components/navigation.html')
           <p class="product-description"><?php echo $prod['descricao_principal']?></p>
           <br>
           <br>
+          <p class="product-description"><?php echo $prod['descricao_auxiliar']?></p>
+          <br>
+          <br>
           
           <div class="product-variants">
             <label class="variant-label">Variação:</label>

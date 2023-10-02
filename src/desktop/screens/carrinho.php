@@ -735,7 +735,9 @@
                     }
                     ?>
                     <br>
-
+                    <br>
+                    <img width="450" src="https://hpdx.hypedx.com.br/assets/images/banners/seloseguranca.avif" alt="">
+                    <br>
 
                     <br>
                     <p class="cnpj">CNPJ: 44.919.104/0001-70</p>

@@ -43,6 +43,13 @@ $useragent=$_SERVER['HTTP_USER_AGENT'];
         /></noscript>
     <!-- End Meta Pixel Code -->
 
+    <link rel="preload" as="image" href="https://hpdx.hypedx.com.br/assets/images/banners/banner02.jpg">
+    <link rel="preload" as="image" href="https://hpdx.hypedx.com.br/assets/images/banners/banner01.jpg">
+    <link rel="preload" as="image" href="https://hpdx.hypedx.com.br/assets/images/banners/tarja.jpg">
+    <link rel="preload" as="image" href="https://hpdx.hypedx.com.br/assets/images/clients/biel.jpg">
+    <link rel="preload" as="image" href="https://hpdx.hypedx.com.br/assets/images/clients/ahi.jpg">
+    <link rel="preload" as="image" href="https://hpdx.hypedx.com.br/assets/images/clients/sadgux.jpg">
+    <!-- <link rel="preload" as="image" href=""> -->
 <?php
 
 if($ismobile == false){

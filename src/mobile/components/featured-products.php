@@ -86,9 +86,9 @@
     background-color: white;
     border: 2px solid #333;
     color: #000000;
-    padding: 50px;
+    padding: 60px !important;
     border-radius: 18px;
-    font-size: 46px;
+    font-size: 36px !important;
     font-weight: bold;
     transition: background-color 0.3s ease;
     margin: 5px;
@@ -129,7 +129,3 @@
     <?php endwhile ?> 
   </div>
 </div>
-
-<div class="button-role">
-        <a class="button-see-more" href="">Ver mais</a>
-    </div>

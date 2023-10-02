@@ -13,16 +13,27 @@
     padding: 20px;
   }
   .product-carousel {
-    display: grid;
+
+    /* display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-row-gap: 0px; */
+    display: flex;
+    flex-wrap: wrap;   
+
+    width: 75%;
+
+    margin-left:5%;
+
     margin-top: 50px;
     margin-bottom:50px;
   }
 
   .product-box {
+    flex-grow: 1;
+    flex-basis: 500px;
+    
     background-color: white;
     border: 1px solid whitesmoke;
     border-radius: 15px;
@@ -133,6 +144,3 @@
   </div>
 </div>
 
-<div class="button-role">
-        <a class="button-see-more" href="../categorias">Ver mais</a>
-    </div>

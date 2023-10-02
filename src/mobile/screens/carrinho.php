@@ -18,11 +18,7 @@
 
 	$total = 0;
 ?>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Carrinho - Checkout</title>
 
     <script src="https://kit.fontawesome.com/b37cf30113.js" crossorigin="anonymous"></script>
@@ -102,16 +98,16 @@
             margin-top:150px;
             align-self: center;
             background-color: white;
-            padding: 20px;
             -webkit-box-shadow: 1px 3px 10px 6px rgba(0,0,0,0.20); 
             box-shadow: 1px 3px 10px 6px rgba(0,0,0,0.20);
+            width: 80% !important;
+            padding: 75px;
         }
         .main-header{
             align-items: center;
             align-self: center;
-            width: 100%;
+            width: 80%;
             margin-bottom:50px;
-            margin-left:-5px;
         }
         .main-body{
             align-items: center;
@@ -202,6 +198,7 @@
 
         .dashed-line{
             border:1px dashed black;
+            width: 130%;
         }
         .shop-btn{
             display: flex;
@@ -228,12 +225,12 @@
             opacity: 0.7;
         }
         .shop-btn i{
-            margin-top:12px;
+            margin-top:21px;
         }
         .shop-btn h2{
             font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 20px;
             margin-left:5px;
         }
         .obs{
@@ -281,9 +278,6 @@
                 100% { transform: rotate(360deg); }
                 }
 
-
-    </style>
-  <style>
         
     .infos{
         padding: 60px;
@@ -332,7 +326,7 @@
     .pay-btn h4{
         font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 22px;
         margin-left:5px;
     }
     .pay-btn i{margin-top:18px;}
@@ -345,13 +339,7 @@
         align-content: center;
         align-items: center;
     }
-    .checkout-form{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        text-align: left;
-        width: 100%;
-    }
+
     .checkout-form h2{
         font-family: Open Sans,Arial,sans-serif;
         font-weight: 700;
@@ -369,28 +357,30 @@
         border-bottom: 1px solid #eee;
         justify-content: space-between;
         align-content:center;
-        padding:5px;
+        padding:10px;
     }
     .product-label img{
-        width: 30%;
+        width: 28%;
         padding: 3px;
     }
     .product-label h1{
         font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
         font-weight: 600;
-        font-size: 16px;
+        font-size: 22px;
         color: #02044a;
         padding:2px;
         margin-top: 25px;
+        margin-left: -20%;
+
     }
     .product-label h2{
         font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 20px;
         color: #02044a;
-        padding:3px;
-        margin-top:65px;
-        margin-right: -15px;
+        padding:5px;
+        margin-top:150px;
+        margin-left: -55%;
     }
     .product-label h3{
         font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
@@ -414,7 +404,7 @@
         line-height: 2;
         font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;
         font-weight: 500;
-        font-size: 12px;
+        font-size: 18px;
         color: #4f5e78!important;
     }
     input{  
@@ -423,13 +413,14 @@
         -webkit-text-size-adjust: 100%;
         border: 1px solid #bbb;
         box-sizing: border-box;
-        width: 100%;
+        width: 75%;
         margin: 0;
         margin-bottom: 25px !important;
         outline: 0;
         -webkit-appearance: none;
         max-width: 100%;
-        font-size: 14px;
+        font-size: 22px;
+        text-align: center;
         line-height: 1.7em;
         border-style: solid;
         height: auto;
@@ -470,13 +461,20 @@
     .cnpj{
         font-family: Open Sans,Arial,sans-serif;
         font-weight: 700;
-        font-size: 11px;
+        font-size: 18px;
         color: #011e3f!important;
         margin-left:0px;
     }
+
 </style>
 
 </head>
+
+
+
+
+
+
 
 <body>
     <header>
@@ -484,22 +482,25 @@
             <a href="https://hypedx.com.br/Inicio"><h2>HPDX</h2></a>
         </div>
     </header>
+
+
     <br>
+
+
     <section>
         
-
-
         <div class="container">
+
 
             <div style="display:none;" class="loader-div" id="loader">
                 <div class="loader"></div>
                 <div class="loader-img">
                     <img width="128" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTExcHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iLTM4IDAgNTExIDUxMS45OTk1NiIgd2lkdGg9IjUxMXB0Ij4KPGcgaWQ9InN1cmZhY2UxIj4KPHBhdGggZD0iTSA0MTMuNDc2NTYyIDM0MS45MTAxNTYgQyAzOTkuNzE0ODQ0IDM3OS4yMDcwMzEgMzc4LjkwMjM0NCA0MTEuNjM2NzE5IDM1MS42MDkzNzUgNDM4LjI4OTA2MiBDIDMyMC41NDI5NjkgNDY4LjYyNSAyNzkuODYzMjgxIDQ5Mi43MzA0NjkgMjMwLjY5OTIxOSA1MDkuOTI1NzgxIEMgMjI5LjA4NTkzOCA1MTAuNDg4MjgxIDIyNy40MDIzNDQgNTEwLjk0OTIxOSAyMjUuNzEwOTM4IDUxMS4yODkwNjIgQyAyMjMuNDc2NTYyIDUxMS43MzA0NjkgMjIxLjIwMzEyNSA1MTEuOTY4NzUgMjE4Ljk0OTIxOSA1MTIgTCAyMTguNTA3ODEyIDUxMiBDIDIxNi4xMDU0NjkgNTEyIDIxMy42OTE0MDYgNTExLjc1NzgxMiAyMTEuMjk2ODc1IDUxMS4yODkwNjIgQyAyMDkuNjA1NDY5IDUxMC45NDkyMTkgMjA3Ljk0NTMxMiA1MTAuNDg4MjgxIDIwNi4zMzk4NDQgNTA5LjkzNzUgQyAxNTcuMTE3MTg4IDQ5Mi43Njk1MzEgMTE2LjM4NjcxOSA0NjguNjc1NzgxIDg1LjI4OTA2MiA0MzguMzM5ODQ0IEMgNTcuOTg0Mzc1IDQxMS42ODc1IDM3LjE3NTc4MSAzNzkuMjc3MzQ0IDIzLjQzMzU5NCAzNDEuOTgwNDY5IEMgLTEuNTU0Njg4IDI3NC4xNjc5NjkgLTAuMTMyODEyIDE5OS40NjQ4NDQgMS4wMTE3MTkgMTM5LjQzMzU5NCBMIDEuMDMxMjUgMTM4LjUxMTcxOSBDIDEuMjYxNzE5IDEzMy41NTQ2ODggMS40MTAxNTYgMTI4LjM0NzY1NiAxLjQ5MjE4OCAxMjIuNTk3NjU2IEMgMS45MTAxNTYgOTQuMzY3MTg4IDI0LjM1NTQ2OSA3MS4wMTE3MTkgNTIuNTg5ODQ0IDY5LjQzNzUgQyAxMTEuNDU3MDMxIDY2LjE1MjM0NCAxNTYuOTk2MDk0IDQ2Ljk1MzEyNSAxOTUuOTA2MjUgOS4wMjczNDQgTCAxOTYuMjQ2MDk0IDguNzE0ODQ0IEMgMjAyLjcwNzAzMSAyLjc4OTA2MiAyMTAuODQ3NjU2IC0wLjExNzE4OCAyMTguOTQ5MjE5IDAuMDAzOTA2MjUgQyAyMjYuNzYxNzE5IDAuMTA1NDY5IDIzNC41NDI5NjkgMy4wMDc4MTIgMjQwLjc3MzQzOCA4LjcxNDg0NCBMIDI0MS4xMDU0NjkgOS4wMjczNDQgQyAyODAuMDIzNDM4IDQ2Ljk1MzEyNSAzMjUuNTYyNSA2Ni4xNTIzNDQgMzg0LjQyOTY4OCA2OS40Mzc1IEMgNDEyLjY2NDA2MiA3MS4wMTE3MTkgNDM1LjEwOTM3NSA5NC4zNjcxODggNDM1LjUyNzM0NCAxMjIuNTk3NjU2IEMgNDM1LjYwOTM3NSAxMjguMzg2NzE5IDQzNS43NTc4MTIgMTMzLjU4NTkzOCA0MzUuOTg4MjgxIDEzOC41MTE3MTkgTCA0MzYgMTM4LjkwMjM0NCBDIDQzNy4xNDA2MjUgMTk5LjA0Njg3NSA0MzguNTU0Njg4IDI3My44OTg0MzggNDEzLjQ3NjU2MiAzNDEuOTEwMTU2IFogTSA0MTMuNDc2NTYyIDM0MS45MTAxNTYgIiBzdHlsZT0iIHN0cm9rZTpub25lO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6cmdiKDAlLDg2LjY2NjY2NyUsNTAuMTk2MDc4JSk7ZmlsbC1vcGFjaXR5OjE7IiAvPgo8cGF0aCBkPSJNIDQxMy40NzY1NjIgMzQxLjkxMDE1NiBDIDM5OS43MTQ4NDQgMzc5LjIwNzAzMSAzNzguOTAyMzQ0IDQxMS42MzY3MTkgMzUxLjYwOTM3NSA0MzguMjg5MDYyIEMgMzIwLjU0Mjk2OSA0NjguNjI1IDI3OS44NjMyODEgNDkyLjczMDQ2OSAyMzAuNjk5MjE5IDUwOS45MjU3ODEgQyAyMjkuMDg1OTM4IDUxMC40ODgyODEgMjI3LjQwMjM0NCA1MTAuOTQ5MjE5IDIyNS43MTA5MzggNTExLjI4OTA2MiBDIDIyMy40NzY1NjIgNTExLjczMDQ2OSAyMjEuMjAzMTI1IDUxMS45Njg3NSAyMTguOTQ5MjE5IDUxMiBMIDIxOC45NDkyMTkgMC4wMDM5MDYyNSBDIDIyNi43NjE3MTkgMC4xMDU0NjkgMjM0LjU0Mjk2OSAzLjAwNzgxMiAyNDAuNzczNDM4IDguNzE0ODQ0IEwgMjQxLjEwNTQ2OSA5LjAyNzM0NCBDIDI4MC4wMjM0MzggNDYuOTUzMTI1IDMyNS41NjI1IDY2LjE1MjM0NCAzODQuNDI5Njg4IDY5LjQzNzUgQyA0MTIuNjY0MDYyIDcxLjAxMTcxOSA0MzUuMTA5Mzc1IDk0LjM2NzE4OCA0MzUuNTI3MzQ0IDEyMi41OTc2NTYgQyA0MzUuNjA5Mzc1IDEyOC4zODY3MTkgNDM1Ljc1NzgxMiAxMzMuNTg1OTM4IDQzNS45ODgyODEgMTM4LjUxMTcxOSBMIDQzNiAxMzguOTAyMzQ0IEMgNDM3LjE0MDYyNSAxOTkuMDQ2ODc1IDQzOC41NTQ2ODggMjczLjg5ODQzOCA0MTMuNDc2NTYyIDM0MS45MTAxNTYgWiBNIDQxMy40NzY1NjIgMzQxLjkxMDE1NiAiIHN0eWxlPSIgc3Ryb2tlOm5vbmU7ZmlsbC1ydWxlOm5vbnplcm87ZmlsbDpyZ2IoMCUsNjYuNjY2NjY3JSwzOC44MjM1MjklKTtmaWxsLW9wYWNpdHk6MTsiIC8+CjxwYXRoIGQ9Ik0gMzQ2LjEwMTU2MiAyNTYgQyAzNDYuMTAxNTYyIDMyNi4yMDcwMzEgMjg5LjA5NzY1NiAzODMuMzU1NDY5IDIxOC45NDkyMTkgMzgzLjYwNTQ2OSBMIDIxOC41IDM4My42MDU0NjkgQyAxNDguMTQ0NTMxIDM4My42MDU0NjkgOTAuODk0NTMxIDMyNi4zNTkzNzUgOTAuODk0NTMxIDI1NiBDIDkwLjg5NDUzMSAxODUuNjQ0NTMxIDE0OC4xNDQ1MzEgMTI4LjM5ODQzOCAyMTguNSAxMjguMzk4NDM4IEwgMjE4Ljk0OTIxOSAxMjguMzk4NDM4IEMgMjg5LjA5NzY1NiAxMjguNjQ4NDM4IDM0Ni4xMDE1NjIgMTg1Ljc5Njg3NSAzNDYuMTAxNTYyIDI1NiBaIE0gMzQ2LjEwMTU2MiAyNTYgIiBzdHlsZT0iIHN0cm9rZTpub25lO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6cmdiKDEwMCUsMTAwJSwxMDAlKTtmaWxsLW9wYWNpdHk6MTsiIC8+CjxwYXRoIGQ9Ik0gMzQ2LjEwMTU2MiAyNTYgQyAzNDYuMTAxNTYyIDMyNi4yMDcwMzEgMjg5LjA5NzY1NiAzODMuMzU1NDY5IDIxOC45NDkyMTkgMzgzLjYwNTQ2OSBMIDIxOC45NDkyMTkgMTI4LjM5ODQzOCBDIDI4OS4wOTc2NTYgMTI4LjY0ODQzOCAzNDYuMTAxNTYyIDE4NS43OTY4NzUgMzQ2LjEwMTU2MiAyNTYgWiBNIDM0Ni4xMDE1NjIgMjU2ICIgc3R5bGU9IiBzdHJva2U6bm9uZTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOnJnYig4OC4yMzUyOTQlLDkyLjE1Njg2MyUsOTQuMTE3NjQ3JSk7ZmlsbC1vcGFjaXR5OjE7IiAvPgo8cGF0aCBkPSJNIDI3Ni40MTc5NjkgMjM3LjYyNSBMIDIxOC45NDkyMTkgMjk1LjEwMTU2MiBMIDIwNi41MzEyNSAzMDcuNTE5NTMxIEMgMjAzLjU5NzY1NiAzMTAuNDUzMTI1IDE5OS43NSAzMTEuOTE3OTY5IDE5NS45MDYyNSAzMTEuOTE3OTY5IEMgMTkyLjA1ODU5NCAzMTEuOTE3OTY5IDE4OC4yMTQ4NDQgMzEwLjQ1MzEyNSAxODUuMjc3MzQ0IDMwNy41MTk1MzEgTCAxNTguNTc4MTI1IDI4MC44MDg1OTQgQyAxNTIuNzEwOTM4IDI3NC45NDE0MDYgMTUyLjcxMDkzOCAyNjUuNDM3NSAxNTguNTc4MTI1IDI1OS41NjY0MDYgQyAxNjQuNDM3NSAyNTMuNjk5MjE5IDE3My45NTMxMjUgMjUzLjY5OTIxOSAxNzkuODIwMzEyIDI1OS41NjY0MDYgTCAxOTUuOTA2MjUgMjc1LjY1MjM0NCBMIDI1NS4xNzU3ODEgMjE2LjM4MjgxMiBDIDI2MS4wNDI5NjkgMjEwLjUxMTcxOSAyNzAuNTU4NTk0IDIxMC41MTE3MTkgMjc2LjQxNzk2OSAyMTYuMzgyODEyIEMgMjgyLjI4NTE1NiAyMjIuMjUgMjgyLjI4NTE1NiAyMzEuNzY1NjI1IDI3Ni40MTc5NjkgMjM3LjYyNSBaIE0gMjc2LjQxNzk2OSAyMzcuNjI1ICIgc3R5bGU9IiBzdHJva2U6bm9uZTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOnJnYig3MC41ODgyMzUlLDgyLjM1Mjk0MSUsODQuMzEzNzI1JSk7ZmlsbC1vcGFjaXR5OjE7IiAvPgo8cGF0aCBkPSJNIDI3Ni40MTc5NjkgMjM3LjYyNSBMIDIxOC45NDkyMTkgMjk1LjEwMTU2MiBMIDIxOC45NDkyMTkgMjUyLjYwNTQ2OSBMIDI1NS4xNzU3ODEgMjE2LjM4MjgxMiBDIDI2MS4wNDI5NjkgMjEwLjUxMTcxOSAyNzAuNTU4NTk0IDIxMC41MTE3MTkgMjc2LjQxNzk2OSAyMTYuMzgyODEyIEMgMjgyLjI4NTE1NiAyMjIuMjUgMjgyLjI4NTE1NiAyMzEuNzY1NjI1IDI3Ni40MTc5NjkgMjM3LjYyNSBaIE0gMjc2LjQxNzk2OSAyMzcuNjI1ICIgc3R5bGU9IiBzdHJva2U6bm9uZTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOnJnYig0My41Mjk0MTIlLDY0LjcwNTg4MiUsNjYuNjY2NjY3JSk7ZmlsbC1vcGFjaXR5OjE7IiAvPgo8L2c+Cjwvc3ZnPg==" />
                 </div>
-
                 <p id="text1" class="loader-text">Estamos finalizando o seu pedido...</p>
                 <p style="display: none;" id="text2" class="loader-text">Isso pode demorar alguns instantes...</p>
             </div>	
+
 
             <script>
                 function remove(id) { 
@@ -507,7 +508,9 @@
                  }
             </script>
 
+
             <div id="cart" class="main">
+
                 <div class="main-header">
                     
                     <div class="circle left checked"><i class="fa-solid fa-check"></i><br><h4>1/3</h4><br><h3>Loja</h3></div>
@@ -516,7 +519,9 @@
 
                     <hr size="1" class="dashed-line">
                 </div>
+
                 <br>
+
                 <div class="main-body">
 
                     <?php
@@ -550,7 +555,7 @@
                         <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt=""> 
                         <h1><?php echo $prod['nome']; ?></h1>
                         <h2>R$<?php echo $prod['preco']; ?>,00</h2>
-                        <h3><a style="text-decoration: none; font-size: 18px; color:black;" href="javascript:remove(<?php echo $prod['id']; ?>)">&times;</a></h3>
+                        <h3><a style="text-decoration: none; font-size: 24px; color:black;" href="javascript:remove(<?php echo $prod['id']; ?>)">&times;</a></h3>
                     </div>
                     <?php 
                             }
@@ -562,22 +567,30 @@
                     ?>
                 </div>
                 <div class="main-footer">
-                    <a style="text-decoration: none;" href="../categorias"><div style="background-color: white !important; color:black !important;" class="shop-btn"><i class="fa-solid fa-cart-shopping"><p> </p></i> <h2> Continuar Comprando</h2></div></a>
+                    <a style="text-decoration: none;" href="../categorias">
+                    <div style="background-color: white !important; color:black !important;" class="shop-btn">
+                    <i class="fa-solid fa-cart-shopping"><p> </p></i> <h2> Continuar Comprando</h2></div></a>
                     <?php
                     if(isset($_SESSION['cartProds']))
                     {
                     ?>
-                    <a style="text-decoration: none;" href="javascript: $('#cart').hide(); $('#checkout').fadeIn(1500);"><div style="margin-top:15px;" class="shop-btn"><i class="fa-solid fa-check"><p> </p></i> <h2> Finalizar Compra</h2></div></a>
+                    <a style="text-decoration: none;" href="javascript: $('#cart').hide(); $('#checkout').fadeIn(1500);">
+                    <div style="margin-top:15px;" class="shop-btn"><i class="fa-solid fa-check"><p> </p></i> <h2> Finalizar Compra</h2></div></a>
                     <?php
                     }
                     ?>
                     <br>
 
-                    <!-- <div class="arrow" onclick="$('#cart').hide(); $('#checkout').fadeIn(1500)" ><i class="fa-solid fa-arrow-right"></i><br><h4></h4></div> -->
+                    <br>
+                    <img style="padding:20px" width="500" src="https://hpdx.hypedx.com.br/assets/images/banners/seloseguranca.avif" alt="">
+                    <br>
 
                     <br>
                     <p class="cnpj">CNPJ: 44.919.104/0001-70</p>
                 </div>
+
+
+
             </div>
 
             <div id="checkout" class="main" style="display: none;">
@@ -589,47 +602,66 @@
                     <hr size="1" class="dashed-line">
                 </div>
                 <br>
+                <br>
+                <br>
+                <?php
+                    // Cria um objeto de preferência
+                    $preference = new MercadoPago\Preference();
+
+                    // Cria um item na preferência
+                    $item = new MercadoPago\Item();
+
+                    $item->title = 'HPDX - Carrinho';
+
+                    $item->quantity = 1;
+                    $item->unit_price = $total;
+
+                    $preference->items = array($item);
+
+                    $preference->back_urls = array(
+                        "success" => "http://www.hypedx.com.br/purchase-status",
+                        "failure" => "http://www.hypedx.com.br/purchase-status",
+                        "pending" => "http://www.hypedx.com.br/purchase-status"
+                    );
+                    $preference->auto_return = "approved";
+
+                    $preference->save();
+
+                ?> 
                 <div class="main-body">
-
                     <div class="checkout-form">
-
-                         <form id="formCad">
-                        <div class="separator">
-
-                        <h2>Informações para o Envio:</h2>
-
-
-
-                        <label for="end">Endereço: <span>*</span> </label>
-
-                        <input onkeydown="checkForm();" required placeholder="Av. Brasil" type="text" name="" id="end">
-
-                        <br>
-
-                        <label for="n">Nº: <span>*</span> </label>
-
-                        <input onkeydown="checkForm();" required placeholder="3113" type="text" name="" id="n" >
-
-                        <br>
-
-                        <label for="cep">CEP: <span>*</span> </label>
-
-                        <input onkeydown="$(this).mask('00000-000'); checkForm()" required placeholder="02431020" type="postal" name="" id="cep" >
-
-                        <br>
-
-                        <label for="compl">Complemento: </label>
-
-                        <input onkeydown="checkForm();" placeholder="Apartamento 212 bloco A" type="text" name="" id="compl">
-
-                        </div>
+                        <form id="formCad">
                             <div class="separator">
 
-                                <style>
-                                    .checkout-form span{
-                                        color:white !important;
-                                    }
-                                </style>
+                                <h2>Informações para o Envio:</h2>
+
+
+
+                                <label for="end">Endereço: <span>*</span> </label>
+
+                                <input onkeydown="checkForm();" required placeholder="Av. Brasil" type="text" name="" id="end">
+
+                                <br>
+
+                                <label for="n">Nº: <span>*</span> </label>
+
+                                <input onkeydown="checkForm();" required placeholder="3113" type="text" name="" id="n" >
+
+                                <br>
+
+                                <label for="cep">CEP: <span>*</span> </label>
+
+                                <input onkeydown="$(this).mask('00000-000'); checkForm()" required placeholder="02431020" type="postal" name="" id="cep" >
+
+                                <br>
+
+                                <label for="compl">Complemento: </label>
+
+                                <input onkeydown="checkForm();" placeholder="Apartamento 212 bloco A" type="text" name="" id="compl">
+
+                            </div>
+                            <div class="separator">
+
 
 
                                 <h2>Informações de Cobrança:</h2>
@@ -661,127 +693,83 @@
 
                                 <input onkeydown="$(this).mask('(00) 00000-0000'); checkForm();" required placeholder="(11) 99999-9999" type="phone" name="" id="tel" >
 
-                                
-                                <?php
-                                // Cria um objeto de preferência
-                                $preference = new MercadoPago\Preference();
 
-                                // Cria um item na preferência
-                                $item = new MercadoPago\Item();
-
-                                $item->title = 'HPDX - Carrinho';
-
-                                $item->quantity = 1;
-                                $item->unit_price = $total;
-
-                                $preference->items = array($item);
-
-                                $preference->back_urls = array(
-                                    "success" => "http://www.hypedx.com.br/purchase-status",
-                                    "failure" => "http://www.hypedx.com.br/purchase-status",
-                                    "pending" => "http://www.hypedx.com.br/purchase-status"
-                                );
-                                $preference->auto_return = "approved";
-
-                                $preference->save();
-
-                                ?> 
-                                <style>
-                                    #payment-label{
-                                        display: none;
-                                        padding: auto;
-                                        margin: 0;
-                                    }
-                                    .payment-align{
-                                        display:flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        text-align: center;
-                                        flex-direction: column;
-                                    }
-                                </style>
                                 <div id="payment-label">
-                                    <div class="payment-align">
-                                    <h2>Total a ser pago: R$ <?php echo $total; ?>,00</h2>
-                                    <br>
-                                    <div id="wallet_container"></div>
-                                    <br>
-                                    <br>
-    
-                                    <img style="padding: 5px; width:85%;" src="https://hpdx.hypedx.com.br/assets/images/banners/mp.png" alt="">
-                                    </div>
-                                </div>
-
-
-
-                                <script>
-                                    mp.bricks().create("wallet", "wallet_container", {
-                                        initialization: {
-                                            preferenceId: "<?php echo $preference->id ?>",
-                                            locale: 'pt-BR',
-                                        },
-                                    });
-
-                                    </script>
-                            </div>
-
-                                    <style>
-                                        #wallet_container button{
-                                            background-color:black !important;
-                                            width: 200px !important;
-                                            align-self: center !important;
-                                            margin: 0 auto !important;
-                                            flex:1 !important;
-                                        }
-                                    </style>
-                                    <script>
-
-                                        function checkForm() {
-
-                                            var nome = $('#nome').val();
-                                            var email = $('#email').val();
-                                            var tel = $('#tel').val();
-                                            var cep = $('#cep').val();
-                                            var num = $('#n').val();
-
-                                            if(nome.length > 3 && email.length > 10 && tel.length > 11 && cep.length > 6 && num.length > 0){
-                                                $('#payment-label').slideDown(200);
-                                            }else{
-                                                $('#payment-label').slideUp(200);
-                                            }
-                                        }
-
-                                    </script>
-                            <br>
-
-                            <div>
-
-
-                                        </div>
-
-                                      </div>
-
-
-                                    </div>
-
+                                <div class="payment-align">
+                                <h2>Total a ser pago: R$ <?php echo $total; ?>,00</h2>
+                                <br>
+                                <div id="wallet_container"></div>
+                                <br>
+                                <br>
                                     
-
+                                <img style="padding: 5px; width:85%;" src="https://hpdx.hypedx.com.br/assets/images/banners/mp.png" alt="">
                             </div>
-
-                            <br>
-
-
-                            </div>
-
-
-
-                        </form>
-
+                        </div>
                     </div>
-                    
-                 
+                </div>
+            </div>
 
-                    
+
+<style>
+    .checkout-form span{
+        color:white !important;
+    }
+</style>
+
+
+<style>
+    #payment-label{
+        display: none;
+        padding: auto;
+        margin: 0;
+    }
+    .payment-align{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+</style>
+<script>
+    mp.bricks().create("wallet", "wallet_container", {
+        initialization: {
+            preferenceId: "<?php echo $preference->id ?>",
+            locale: 'pt-BR',
+        },
+    });
+
+    </script>
+
+<style>
+#wallet_container button{
+background-color:black !important;
+width: auto !important;
+align-self: center !important;
+            margin: 0 auto !important;
+            flex:1 !important;
+        }
+    </style>
+    <script>
+
+        function checkForm() {
+
+            var nome = $('#nome').val();
+            var email = $('#email').val();
+            var tel = $('#tel').val();
+            var cep = $('#cep').val();
+            var num = $('#n').val();
+
+            if(nome.length > 3 && email.length > 10 && tel.length > 11 && cep.length > 6 && num.length > 0){
+                $('#payment-label').slideDown(200);
+            }else{
+                $('#payment-label').slideUp(200);
+            }
+        }
+
+    </script>
+
+                                   
 
             </div>
             

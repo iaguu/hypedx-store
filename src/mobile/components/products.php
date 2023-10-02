@@ -13,6 +13,7 @@
     text-align: center;
     flex-direction: column;
     margin-top:50px;
+    margin-left: 8%;
 }
 
 .products-label{
@@ -97,13 +98,45 @@
 #colares{
     display: none;
 }
+#hundred{
+    display: none;
+}
 </style>
 
 <div id="hidden" class="hidden-content">
 
     <div class="container">
 
-        <div id="colares">
+    <div id="hundred">
+            <h1>Abaixo de R$150</h1>
+            <div class="products-label">
+
+            <?php
+                $query = "SELECT * FROM produtos WHERE (marca = 'hpdx' OR marca = 'hyped') AND preco < 150 ORDER BY id DESC";
+                $run = $mysqli->query($query);
+                $row = mysqli_num_rows($run);    
+
+                while ($produto = $run->fetch_array()):
+                
+                $imgs = explode(",", $produto['imagem']);
+
+            ?>
+            <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
+                <div class="product-label">
+                <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt="">
+                <h2><?php echo $produto['nome']; ?></h2>
+                <h4><?php echo $produto['descricao_principal']; ?></h4>
+                <p>R$<?php echo $produto['preco']; ?>,00</p>
+            </div>
+
+            <?php 
+            endwhile;
+            ?>
+
+            </div>
+</a>
+        </div>
+    <div id="colares">
             <h1>Colares</h1>
             <div class="products-label">
 
@@ -119,9 +152,9 @@
                 $imgs = explode(",", $produto['imagem']);
 
             ?>
-<a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
-     <div class="product-label">
-                <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt="">
+            <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
+                <div class="product-label">
+                <img src="https://hpdx.hypedx.com.br/https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt="">
                 <h2><?php echo $produto['nome']; ?></h2>
                 <h4><?php echo $produto['descricao_principal']; ?></h4>
                 <p>R$<?php echo $produto['preco']; ?>,00</p>
@@ -151,9 +184,9 @@
 
             ?>
 
-<a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
-     <div class="product-label">
-                <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt="">
+            <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
+                <div class="product-label">
+                <img src="https://hpdx.hypedx.com.br/https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt="">
                 <h2><?php echo $produto['nome']; ?></h2>
                 <h4><?php echo $produto['descricao_principal']; ?></h4>
                 <p>R$<?php echo $produto['preco']; ?>,00</p>
@@ -182,9 +215,9 @@
 
             ?>
 
-<a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
-     <div class="product-label">
-                <img src="assets/images/products/<?php echo $imgs[0]; ?>" alt="">
+            <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
+                <div class="product-label">
+                <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt="">
                 <h2><?php echo $produto['nome']; ?></h2>
                 <h4><?php echo $produto['descricao_principal']; ?></h4>
                 <p>R$<?php echo $produto['preco']; ?>,00</p>
@@ -213,9 +246,9 @@
 
             ?>
 
-<a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
-     <div class="product-label">
-                <img src="assets/images/products/<?php echo $imgs[0]; ?>" alt="">
+            <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
+                <div class="product-label">
+                <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt="">
                 <h2><?php echo $produto['nome']; ?></h2>
                 <h4><?php echo $produto['descricao_principal']; ?></h4>
                 <p>R$<?php echo $produto['preco']; ?>,00</p>
@@ -245,9 +278,9 @@
 
             ?>
 
-<a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
-     <div class="product-label">
-                <img src="assets/images/products/<?php echo $imgs[0]; ?>" alt="">
+            <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
+                <div class="product-label">
+                <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt="">
                 <h2><?php echo $produto['nome']; ?></h2>
                 <h4><?php echo $produto['descricao_principal']; ?></h4>
                 <p>R$<?php echo $produto['preco']; ?>,00</p>
@@ -276,9 +309,9 @@
 
             ?>
 
-<a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
-     <div class="product-label">
-                <img src="assets/images/products/<?php echo $imgs[0]; ?>" alt="">
+            <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
+                <div class="product-label">
+                <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt="">
                 <h2><?php echo $produto['nome']; ?></h2>
                 <h4><?php echo $produto['descricao_principal']; ?></h4>
                 <p>R$<?php echo $produto['preco']; ?>,00</p>
@@ -307,9 +340,9 @@
 
             ?>
 
-<a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
-     <div class="product-label">
-                <img src="assets/images/products/<?php echo $imgs[0]; ?>" alt="">
+            <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
+                <div class="product-label">
+                <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt="">
                 <h2><?php echo $produto['nome']; ?></h2>
                 <h4><?php echo $produto['descricao_principal']; ?></h4>
                 <p>R$<?php echo $produto['preco']; ?>,00</p>
@@ -339,9 +372,9 @@
 
             ?>
 
-<a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
-     <div class="product-label">
-                <img src="assets/images/products/<?php echo $imgs[0]; ?>" alt="">
+            <a href="https://hypedx.com.br/produto/<?php echo $produto['href'] ;?>">       
+                <div class="product-label">
+                <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]; ?>" alt="">
                 <h2><?php echo $produto['nome']; ?></h2>
                 <h4><?php echo $produto['descricao_principal']; ?></h4>
                 <p>R$<?php echo $produto['preco']; ?>,00</p>

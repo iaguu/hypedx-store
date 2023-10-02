@@ -1,4 +1,0 @@
-[11-Jun-2021 04:15:43 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home2/hypedx94/public_html/sktpoint/load.php:3
-Stack trace:
-#0 {main}
-  thrown in /home2/hypedx94/public_html/sktpoint/load.php on line 3

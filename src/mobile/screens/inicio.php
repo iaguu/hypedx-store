@@ -100,8 +100,12 @@
   <!-- Seção de Produtos Mais Vendidos -->
 
     <section>
-      <?php
+    <?php
         include('src/mobile/components/featured-products.php')
+      ?>
+
+<?php
+        include('src/mobile/components/all-products.php')
       ?>
 
 

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
+
   <title>Visualização de Produto</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -36,7 +34,7 @@
     flex-direction: column;
   }
   .principal img{
-    width: 300px;
+    width: 375px;
     margin-bottom: 10px;
     border-radius: 5px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
@@ -66,7 +64,7 @@
   }
 
   .product-price {
-    font-size: 32px;
+    font-size: 34px;
     font-weight: bold;
     margin-bottom: 15px;
     color: black;
@@ -81,7 +79,7 @@
   }
 
   .variant-label {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     color: #333333;
   }
@@ -93,8 +91,8 @@
 
   .variant-option {
     display: inline-block;
-    padding: 8px 15px;
-    font-size: 18px;
+    padding: 12px 20px;
+    font-size: 24px;
     color: #ffffff;
     background-color: #333333;
     border-radius: 20px;
@@ -239,10 +237,10 @@ include('src/mobile/components/navigation.html')
         <div class="principal">
                 <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 1">
             </div>
-          <div class="secondary">
+          <!-- <div class="secondary">
             <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 2">
             <img src="https://hpdx.hypedx.com.br/assets/images/products/<?php echo $imgs[0]?>" alt="Product Image 3">
-          </div>
+          </div> -->
 
         </div>
         <br>
@@ -255,6 +253,8 @@ include('src/mobile/components/navigation.html')
 
           <div class="product-variants">
             <label class="variant-label">Variação:</label>
+            <br>
+            <br>
             <div class="variant-options">
               <div class="variant-option">Prata</div>
               <div class="variant-option">Ouro</div>
@@ -279,7 +279,7 @@ include('src/mobile/components/navigation.html')
         <br>
         <br>
 
-            <h3>Você também pode gostar:</h3>
+            <!-- <h3>Você também pode gostar:</h3> -->
             <br>
             <br>
 

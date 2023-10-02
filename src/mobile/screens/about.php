@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<script src="https://kit.fontawesome.com/b37cf30113.js" crossorigin="anonymous"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre</title>
   <style>
     body {
@@ -55,7 +52,7 @@
 <body>
 
     <?php
-    include('src/desktop/components/navigation.html')
+    include('src/mobile/components/navigation.html')
     ?>
 
 <div class="container">
@@ -90,14 +87,14 @@
 
   </div>  
     <?php
-    include('src/desktop/components/faq.html')
+    include('src/mobile/components/faq.html')
     ?>
 
 </div>
 <br>
 <br>
 <?php
-include('src/desktop/components/footer.html')
+include('src/mobile/components/footer.html')
 ?>
 </body>
 
